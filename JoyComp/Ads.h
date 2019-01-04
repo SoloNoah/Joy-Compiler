@@ -185,9 +185,7 @@ namespace JoyCompiler {
 		}
 #pragma endregion
 	private: System::Void addButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		string url = marshal_as<string>(linkInput->Text);
-		regex url_regex("((https | http)? : \ / \ / ) ? ([\da - z\. - ] + )\.([a - z\.]{ 2,6 })([\ / \w \. - ] * )*\ / ? $ /");
-		if ((nameInput->TextLength <= 40 && nameInput->TextLength >= 3) && regex_match(url, url_regex) == true) {
+		if (nameInput->TextLength <= 40 && nameInput->TextLength >= 3) {
 			this->addButton->BackColor = System::Drawing::Color::DarkGray;
 			writeToDataBase(nameInput->Text, linkInput->Text, priorityInput->Text, "NULL", "Ads");
 			MessageBox::Show("Ad added successfully!");

@@ -125,6 +125,9 @@ namespace JoyCompiler {
 		{
 			this->add_backButton = (gcnew System::Windows::Forms::Button());
 			this->addPanel = (gcnew System::Windows::Forms::Panel());
+			this->add_errorLabel4 = (gcnew System::Windows::Forms::Label());
+			this->add_errorLabel8 = (gcnew System::Windows::Forms::Label());
+			this->add_errorLabel7 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->add_yearInput = (gcnew System::Windows::Forms::TextBox());
 			this->add_monthInput = (gcnew System::Windows::Forms::TextBox());
@@ -176,9 +179,6 @@ namespace JoyCompiler {
 			this->search_nameInput = (gcnew System::Windows::Forms::TextBox());
 			this->search_searchLabel = (gcnew System::Windows::Forms::Label());
 			this->search_Label = (gcnew System::Windows::Forms::Label());
-			this->add_errorLabel7 = (gcnew System::Windows::Forms::Label());
-			this->add_errorLabel8 = (gcnew System::Windows::Forms::Label());
-			this->add_errorLabel4 = (gcnew System::Windows::Forms::Label());
 			this->addPanel->SuspendLayout();
 			this->contentPanel->SuspendLayout();
 			this->deletePanel->SuspendLayout();
@@ -225,6 +225,45 @@ namespace JoyCompiler {
 			this->addPanel->Name = L"addPanel";
 			this->addPanel->Size = System::Drawing::Size(305, 347);
 			this->addPanel->TabIndex = 4;
+			// 
+			// add_errorLabel4
+			// 
+			this->add_errorLabel4->AutoSize = true;
+			this->add_errorLabel4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->add_errorLabel4->ForeColor = System::Drawing::Color::Red;
+			this->add_errorLabel4->Location = System::Drawing::Point(231, 248);
+			this->add_errorLabel4->Name = L"add_errorLabel4";
+			this->add_errorLabel4->Size = System::Drawing::Size(62, 26);
+			this->add_errorLabel4->TabIndex = 32;
+			this->add_errorLabel4->Text = L"*Error\r\nInvalid date";
+			this->add_errorLabel4->Visible = false;
+			// 
+			// add_errorLabel8
+			// 
+			this->add_errorLabel8->AutoSize = true;
+			this->add_errorLabel8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->add_errorLabel8->ForeColor = System::Drawing::Color::Red;
+			this->add_errorLabel8->Location = System::Drawing::Point(7, 273);
+			this->add_errorLabel8->Name = L"add_errorLabel8";
+			this->add_errorLabel8->Size = System::Drawing::Size(58, 26);
+			this->add_errorLabel8->TabIndex = 31;
+			this->add_errorLabel8->Text = L"*Error\r\nInvalid day";
+			this->add_errorLabel8->Visible = false;
+			// 
+			// add_errorLabel7
+			// 
+			this->add_errorLabel7->AutoSize = true;
+			this->add_errorLabel7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->add_errorLabel7->ForeColor = System::Drawing::Color::Red;
+			this->add_errorLabel7->Location = System::Drawing::Point(82, 273);
+			this->add_errorLabel7->Name = L"add_errorLabel7";
+			this->add_errorLabel7->Size = System::Drawing::Size(70, 26);
+			this->add_errorLabel7->TabIndex = 30;
+			this->add_errorLabel7->Text = L"*Error\r\nInvalid month";
+			this->add_errorLabel7->Visible = false;
 			// 
 			// label1
 			// 
@@ -772,55 +811,16 @@ namespace JoyCompiler {
 			this->search_Label->TabIndex = 36;
 			this->search_Label->Text = L"Search\r\n      Event";
 			// 
-			// add_errorLabel7
-			// 
-			this->add_errorLabel7->AutoSize = true;
-			this->add_errorLabel7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(177)));
-			this->add_errorLabel7->ForeColor = System::Drawing::Color::Red;
-			this->add_errorLabel7->Location = System::Drawing::Point(82, 273);
-			this->add_errorLabel7->Name = L"add_errorLabel7";
-			this->add_errorLabel7->Size = System::Drawing::Size(70, 26);
-			this->add_errorLabel7->TabIndex = 30;
-			this->add_errorLabel7->Text = L"*Error\r\nInvalid month";
-			this->add_errorLabel7->Visible = false;
-			// 
-			// add_errorLabel8
-			// 
-			this->add_errorLabel8->AutoSize = true;
-			this->add_errorLabel8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(177)));
-			this->add_errorLabel8->ForeColor = System::Drawing::Color::Red;
-			this->add_errorLabel8->Location = System::Drawing::Point(7, 273);
-			this->add_errorLabel8->Name = L"add_errorLabel8";
-			this->add_errorLabel8->Size = System::Drawing::Size(58, 26);
-			this->add_errorLabel8->TabIndex = 31;
-			this->add_errorLabel8->Text = L"*Error\r\nInvalid day";
-			this->add_errorLabel8->Visible = false;
-			// 
-			// add_errorLabel4
-			// 
-			this->add_errorLabel4->AutoSize = true;
-			this->add_errorLabel4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(177)));
-			this->add_errorLabel4->ForeColor = System::Drawing::Color::Red;
-			this->add_errorLabel4->Location = System::Drawing::Point(231, 248);
-			this->add_errorLabel4->Name = L"add_errorLabel4";
-			this->add_errorLabel4->Size = System::Drawing::Size(62, 26);
-			this->add_errorLabel4->TabIndex = 32;
-			this->add_errorLabel4->Text = L"*Error\r\nInvalid date";
-			this->add_errorLabel4->Visible = false;
-			// 
 			// Content
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->add_backButton;
 			this->ClientSize = System::Drawing::Size(329, 368);
-			this->Controls->Add(this->addPanel);
 			this->Controls->Add(this->searchPanel);
 			this->Controls->Add(this->deletePanel);
 			this->Controls->Add(this->contentPanel);
+			this->Controls->Add(this->addPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MaximizeBox = false;
 			this->Name = L"Content";

@@ -418,7 +418,6 @@ namespace JoyCompiler {
 		loginPanel->Visible = false;
 		registerPanel->Visible = true;
 	}
-	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {}
 	private: System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		login_errorLabel2->Hide();
 		if (login_passInput->TextLength < 3)

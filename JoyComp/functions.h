@@ -8,6 +8,7 @@
 #include <ctime>
 #include <time.h>
 #include <regex>
+#include <poclass.h>
 
 typedef enum access { ADMIN, USER, CONPROMOTER } permission;
 typedef enum string_cmp { LEFT, RIGHT };
@@ -504,32 +505,38 @@ namespace JoyCompiler {
 
 	void writeToDataBase(String^ text1, String^ text2, String^ text3, String^ text4, string identifier) {
 		if (identifier == "Bugs") {
-			fstream file(identifier + ".txt", ios::app);
-			if (!file.eof())
-				file << "\n" << marshal_as<string>(text1) + "\0";
-			else
-				file << marshal_as<string>(text1) + "\0";
+			fstream file;
+			if (checkIfFileEmpty("Bugs.txt") == false) {
+				file.open(identifier + ".txt", ios::app);
+				file << "\n" + marshal_as<string>(text1);
+			}
+			else {
+				file.open(identifier + ".txt", ios::app);
+				file << marshal_as<string>(text1);
+			}
 			file.close();
 		}
 		else if (identifier == "Ads") {
-			fstream file(identifier + ".txt", ios::app);
+			fstream file;
 			string temp = marshal_as<string>(text3);
-			fstream totalAdsFile("TotalAds.txt", ios::app);
+			fstream totalAdsFile;
 			int stop = stoi(temp);
-			totalAdsFile.seekg(0, totalAdsFile.end);
-			int length = totalAdsFile.tellg();
-			if (length != 0)
+			if (checkIfFileEmpty("TotalAds.txt") == false) {
+				totalAdsFile.open("TotalAds.txt", ios::app);
 				totalAdsFile << "\n" << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
-			else
-				totalAdsFile << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
-			for (int i = 0; i < stop; i++) {
-				file.seekg(0, file.end);
-				length = file.tellg();
-				if (length != 0)
-					file << "\n" << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
-				else
-					file << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
+				totalAdsFile.close();
 			}
+			else {
+				totalAdsFile.open("TotalAds.txt", ios::app);
+				totalAdsFile << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
+				totalAdsFile.close();
+			}
+			file.open("Ads.txt", ios::app);
+			int lenght = checkIfFileEmpty("Ads.txt");
+			if (lenght == 0 && stop >= 1)
+				file << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
+			for (int i = 0; i < stop; i++)
+				file << "\n" << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
 			file.close();
 		}
 		else if (identifier == "Content") {
@@ -573,17 +580,21 @@ namespace JoyCompiler {
 			}
 		}
 		else {
-			fstream file(identifier + ".txt", ios::app);
-			if (!file.eof())
+			fstream file;
+			string temp = identifier + ".txt";
+			const char* fileName = temp.c_str();
+			if (checkIfFileEmpty(fileName) == false) {
+				file.open(fileName, ios::app);
 				file << "\n" << marshal_as<string>(text1) + " " + marshal_as<string>(text2) + " " + marshal_as<string>(text3) +
-				" " + marshal_as<string>(text4) + " " + globalUsername + "\0";
-			else
+					" " + marshal_as<string>(text4) + " " + globalUsername;
+			}
+			else {
+				file.open(fileName, ios::app);
 				file << marshal_as<string>(text1) + " " + marshal_as<string>(text2) + " " + marshal_as<string>(text3) +
-				" " + marshal_as<string>(text4) + " " + globalUsername + "\0";
+					" " + marshal_as<string>(text4) + " " + globalUsername;
+			}
 			file.close();
 		}
-
-
 	}
 
 	int getNumberOfLines(char* fileName) {
