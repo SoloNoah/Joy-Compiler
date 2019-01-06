@@ -74,7 +74,8 @@ namespace JoyCompiler {
 
 
 	private: System::Windows::Forms::Button^  faq_backButton;
-	private: System::Windows::Forms::TextBox^  outputTextBox;
+	private: System::Windows::Forms::ListBox^  outputTextBox;
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -101,9 +102,9 @@ namespace JoyCompiler {
 			this->bugInput = (gcnew System::Windows::Forms::TextBox());
 			this->bugLabel = (gcnew System::Windows::Forms::Label());
 			this->faqPanel = (gcnew System::Windows::Forms::Panel());
+			this->outputTextBox = (gcnew System::Windows::Forms::ListBox());
 			this->faqLabel = (gcnew System::Windows::Forms::Label());
 			this->faq_backButton = (gcnew System::Windows::Forms::Button());
-			this->outputTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->techPanel->SuspendLayout();
 			this->bugPanel->SuspendLayout();
 			this->faqPanel->SuspendLayout();
@@ -111,7 +112,7 @@ namespace JoyCompiler {
 			// 
 			// contactButton
 			// 
-			this->contactButton->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->contactButton->BackColor = System::Drawing::Color::Transparent;
 			this->contactButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->contactButton->Location = System::Drawing::Point(53, 223);
 			this->contactButton->Name = L"contactButton";
@@ -123,7 +124,7 @@ namespace JoyCompiler {
 			// 
 			// bugButton
 			// 
-			this->bugButton->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->bugButton->BackColor = System::Drawing::Color::Transparent;
 			this->bugButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->bugButton->Location = System::Drawing::Point(53, 185);
 			this->bugButton->Name = L"bugButton";
@@ -135,7 +136,7 @@ namespace JoyCompiler {
 			// 
 			// faqButton
 			// 
-			this->faqButton->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->faqButton->BackColor = System::Drawing::Color::Transparent;
 			this->faqButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faqButton->Location = System::Drawing::Point(53, 147);
 			this->faqButton->Name = L"faqButton";
@@ -147,7 +148,7 @@ namespace JoyCompiler {
 			// 
 			// tech_backButton
 			// 
-			this->tech_backButton->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->tech_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->tech_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->tech_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->tech_backButton->Location = System::Drawing::Point(9, 272);
@@ -160,6 +161,7 @@ namespace JoyCompiler {
 			// 
 			// techPanel
 			// 
+			this->techPanel->BackColor = System::Drawing::Color::Transparent;
 			this->techPanel->Controls->Add(this->tech_backButton);
 			this->techPanel->Controls->Add(this->faqButton);
 			this->techPanel->Controls->Add(this->bugButton);
@@ -173,6 +175,7 @@ namespace JoyCompiler {
 			// techLabel
 			// 
 			this->techLabel->AutoSize = true;
+			this->techLabel->BackColor = System::Drawing::Color::Transparent;
 			this->techLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->techLabel->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -184,6 +187,7 @@ namespace JoyCompiler {
 			// 
 			// bugPanel
 			// 
+			this->bugPanel->BackColor = System::Drawing::Color::Transparent;
 			this->bugPanel->Controls->Add(this->label1);
 			this->bugPanel->Controls->Add(this->bug_sendButton);
 			this->bugPanel->Controls->Add(this->bug_backButton);
@@ -197,6 +201,7 @@ namespace JoyCompiler {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -208,7 +213,7 @@ namespace JoyCompiler {
 			// 
 			// bug_sendButton
 			// 
-			this->bug_sendButton->BackColor = System::Drawing::Color::DarkGray;
+			this->bug_sendButton->BackColor = System::Drawing::Color::Transparent;
 			this->bug_sendButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->bug_sendButton->Location = System::Drawing::Point(209, 268);
 			this->bug_sendButton->Margin = System::Windows::Forms::Padding(4);
@@ -221,7 +226,7 @@ namespace JoyCompiler {
 			// 
 			// bug_backButton
 			// 
-			this->bug_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->bug_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->bug_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->bug_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->bug_backButton->Location = System::Drawing::Point(19, 268);
@@ -253,21 +258,35 @@ namespace JoyCompiler {
 			// 
 			// faqPanel
 			// 
+			this->faqPanel->BackColor = System::Drawing::Color::Transparent;
+			this->faqPanel->Controls->Add(this->outputTextBox);
 			this->faqPanel->Controls->Add(this->faqLabel);
 			this->faqPanel->Controls->Add(this->faq_backButton);
-			this->faqPanel->Controls->Add(this->outputTextBox);
 			this->faqPanel->Location = System::Drawing::Point(2, 3);
 			this->faqPanel->Name = L"faqPanel";
 			this->faqPanel->Size = System::Drawing::Size(318, 324);
 			this->faqPanel->TabIndex = 16;
 			// 
+			// outputTextBox
+			// 
+			this->outputTextBox->FormattingEnabled = true;
+			this->outputTextBox->HorizontalScrollbar = true;
+			this->outputTextBox->ItemHeight = 16;
+			this->outputTextBox->Location = System::Drawing::Point(10, 72);
+			this->outputTextBox->Name = L"outputTextBox";
+			this->outputTextBox->SelectionMode = System::Windows::Forms::SelectionMode::None;
+			this->outputTextBox->Size = System::Drawing::Size(303, 196);
+			this->outputTextBox->TabIndex = 35;
+			this->outputTextBox->SelectedIndexChanged += gcnew System::EventHandler(this, &TechSupport::outputTextBox_SelectedIndexChanged);
+			// 
 			// faqLabel
 			// 
 			this->faqLabel->AutoSize = true;
+			this->faqLabel->BackColor = System::Drawing::Color::Transparent;
 			this->faqLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faqLabel->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->faqLabel->Location = System::Drawing::Point(79, 14);
+			this->faqLabel->Location = System::Drawing::Point(72, 6);
 			this->faqLabel->Name = L"faqLabel";
 			this->faqLabel->Size = System::Drawing::Size(157, 69);
 			this->faqLabel->TabIndex = 34;
@@ -275,7 +294,7 @@ namespace JoyCompiler {
 			// 
 			// faq_backButton
 			// 
-			this->faq_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->faq_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->faq_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->faq_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faq_backButton->Location = System::Drawing::Point(13, 272);
@@ -287,26 +306,17 @@ namespace JoyCompiler {
 			this->faq_backButton->UseVisualStyleBackColor = false;
 			this->faq_backButton->Click += gcnew System::EventHandler(this, &TechSupport::faq_backButton_Click);
 			// 
-			// outputTextBox
-			// 
-			this->outputTextBox->Location = System::Drawing::Point(19, 89);
-			this->outputTextBox->MaxLength = 255;
-			this->outputTextBox->Multiline = true;
-			this->outputTextBox->Name = L"outputTextBox";
-			this->outputTextBox->Size = System::Drawing::Size(273, 143);
-			this->outputTextBox->TabIndex = 19;
-			this->outputTextBox->TextChanged += gcnew System::EventHandler(this, &TechSupport::faqInput_TextChanged);
-			// 
 			// TechSupport
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->tech_backButton;
 			this->ClientSize = System::Drawing::Size(328, 335);
-			this->Controls->Add(this->techPanel);
 			this->Controls->Add(this->faqPanel);
 			this->Controls->Add(this->bugPanel);
+			this->Controls->Add(this->techPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->MaximizeBox = false;
 			this->Name = L"TechSupport";
 			this->Text = L"TechSupport";
@@ -328,6 +338,17 @@ namespace JoyCompiler {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		techPanel->Visible = false;
 		faqPanel->Visible = true;
+		string text, allText;
+		ifstream readFile;
+		readFile.open("FAQ.txt");
+		while (getline(readFile, text)) {
+			text += "\n";
+			outputTextBox->Items->Add(gcnew String(text.c_str()));
+			getline(readFile, text);
+			text += "\n\n";
+			outputTextBox->Items->Add(gcnew String(text.c_str()));
+		}
+		readFile.close();
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		techPanel->Visible = false;
@@ -346,11 +367,6 @@ namespace JoyCompiler {
 		bugPanel->Visible = false;
 	}
 	private: System::Void faqInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		string text = printAllFile("FAQ");
-		String^ printText = gcnew String(text.c_str());
-		outputTextBox->ReadOnly = false;
-		outputTextBox->Text = printText;
-		outputTextBox->ReadOnly = true;
 	}
 	private: System::Void faq_backButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		techPanel->Visible = true;
@@ -362,5 +378,7 @@ namespace JoyCompiler {
 		bugPanel->Visible = false;
 		techPanel->Visible = true;
 	}
+private: System::Void outputTextBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

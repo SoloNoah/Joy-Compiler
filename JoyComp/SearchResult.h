@@ -93,7 +93,7 @@ namespace JoyCompiler {
 			// 
 			// backButton
 			// 
-			this->backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->backButton->BackColor = System::Drawing::Color::Transparent;
 			this->backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->backButton->Location = System::Drawing::Point(12, 300);
 			this->backButton->Name = L"backButton";
@@ -105,7 +105,7 @@ namespace JoyCompiler {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::DarkGray;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Location = System::Drawing::Point(465, 300);
 			this->button1->Name = L"button1";
@@ -123,6 +123,7 @@ namespace JoyCompiler {
 			this->dateListBox->ItemHeight = 16;
 			this->dateListBox->Location = System::Drawing::Point(410, 117);
 			this->dateListBox->Name = L"dateListBox";
+			this->dateListBox->SelectionMode = System::Windows::Forms::SelectionMode::None;
 			this->dateListBox->Size = System::Drawing::Size(135, 160);
 			this->dateListBox->TabIndex = 49;
 			// 
@@ -134,6 +135,7 @@ namespace JoyCompiler {
 			this->catListBox->ItemHeight = 16;
 			this->catListBox->Location = System::Drawing::Point(278, 117);
 			this->catListBox->Name = L"catListBox";
+			this->catListBox->SelectionMode = System::Windows::Forms::SelectionMode::None;
 			this->catListBox->Size = System::Drawing::Size(136, 160);
 			this->catListBox->TabIndex = 48;
 			// 
@@ -145,6 +147,7 @@ namespace JoyCompiler {
 			this->genListBox->ItemHeight = 16;
 			this->genListBox->Location = System::Drawing::Point(146, 117);
 			this->genListBox->Name = L"genListBox";
+			this->genListBox->SelectionMode = System::Windows::Forms::SelectionMode::None;
 			this->genListBox->Size = System::Drawing::Size(134, 160);
 			this->genListBox->TabIndex = 47;
 			// 
@@ -162,6 +165,7 @@ namespace JoyCompiler {
 			// faqLabel
 			// 
 			this->faqLabel->AutoSize = true;
+			this->faqLabel->BackColor = System::Drawing::Color::Transparent;
 			this->faqLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faqLabel->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -174,6 +178,7 @@ namespace JoyCompiler {
 			// dateLabel
 			// 
 			this->dateLabel->AutoSize = true;
+			this->dateLabel->BackColor = System::Drawing::Color::Transparent;
 			this->dateLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dateLabel->Location = System::Drawing::Point(407, 92);
 			this->dateLabel->Name = L"dateLabel";
@@ -184,6 +189,7 @@ namespace JoyCompiler {
 			// genLabel
 			// 
 			this->genLabel->AutoSize = true;
+			this->genLabel->BackColor = System::Drawing::Color::Transparent;
 			this->genLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->genLabel->Location = System::Drawing::Point(275, 92);
 			this->genLabel->Name = L"genLabel";
@@ -194,6 +200,7 @@ namespace JoyCompiler {
 			// catLabel
 			// 
 			this->catLabel->AutoSize = true;
+			this->catLabel->BackColor = System::Drawing::Color::Transparent;
 			this->catLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->catLabel->Location = System::Drawing::Point(143, 92);
 			this->catLabel->Name = L"catLabel";
@@ -204,6 +211,7 @@ namespace JoyCompiler {
 			// nameLabel
 			// 
 			this->nameLabel->AutoSize = true;
+			this->nameLabel->BackColor = System::Drawing::Color::Transparent;
 			this->nameLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->nameLabel->Location = System::Drawing::Point(14, 92);
 			this->nameLabel->Name = L"nameLabel";
@@ -228,6 +236,7 @@ namespace JoyCompiler {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(559, 344);
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dateListBox);
 			this->Controls->Add(this->catListBox);

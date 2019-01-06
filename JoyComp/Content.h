@@ -106,6 +106,9 @@ namespace JoyCompiler {
 	private: System::Windows::Forms::Label^  add_errorLabel8;
 
 	private: System::Windows::Forms::Label^  add_errorLabel7;
+	private: System::Windows::Forms::Label^  del_errorLabel1;
+	private: System::Windows::Forms::Label^  del_errorLabel2;
+	private: System::Windows::Forms::Label^  del_errorLabel3;
 
 
 
@@ -151,6 +154,9 @@ namespace JoyCompiler {
 			this->addEventButton = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->deletePanel = (gcnew System::Windows::Forms::Panel());
+			this->del_errorLabel1 = (gcnew System::Windows::Forms::Label());
+			this->del_errorLabel2 = (gcnew System::Windows::Forms::Label());
+			this->del_errorLabel3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->del_yearInput = (gcnew System::Windows::Forms::TextBox());
@@ -187,7 +193,7 @@ namespace JoyCompiler {
 			// 
 			// add_backButton
 			// 
-			this->add_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->add_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->add_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->add_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->add_backButton->Location = System::Drawing::Point(4, 303);
@@ -201,16 +207,14 @@ namespace JoyCompiler {
 			// 
 			// addPanel
 			// 
+			this->addPanel->BackColor = System::Drawing::Color::Transparent;
 			this->addPanel->Controls->Add(this->add_errorLabel4);
 			this->addPanel->Controls->Add(this->add_errorLabel8);
 			this->addPanel->Controls->Add(this->add_errorLabel7);
-			this->addPanel->Controls->Add(this->add_backButton);
-			this->addPanel->Controls->Add(this->label1);
 			this->addPanel->Controls->Add(this->add_yearInput);
 			this->addPanel->Controls->Add(this->add_monthInput);
 			this->addPanel->Controls->Add(this->add_errorLabel2);
 			this->addPanel->Controls->Add(this->add_errorLabel3);
-			this->addPanel->Controls->Add(this->add_confirmButton);
 			this->addPanel->Controls->Add(this->add_errorLabel5);
 			this->addPanel->Controls->Add(this->add_errorLabel1);
 			this->addPanel->Controls->Add(this->add_dateLabel);
@@ -221,6 +225,9 @@ namespace JoyCompiler {
 			this->addPanel->Controls->Add(this->add_genInput);
 			this->addPanel->Controls->Add(this->add_catInput);
 			this->addPanel->Controls->Add(this->add_nameInput);
+			this->addPanel->Controls->Add(this->add_backButton);
+			this->addPanel->Controls->Add(this->label1);
+			this->addPanel->Controls->Add(this->add_confirmButton);
 			this->addPanel->Location = System::Drawing::Point(12, 12);
 			this->addPanel->Name = L"addPanel";
 			this->addPanel->Size = System::Drawing::Size(305, 347);
@@ -268,6 +275,7 @@ namespace JoyCompiler {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -319,7 +327,7 @@ namespace JoyCompiler {
 			// 
 			// add_confirmButton
 			// 
-			this->add_confirmButton->BackColor = System::Drawing::Color::DarkGray;
+			this->add_confirmButton->BackColor = System::Drawing::Color::Transparent;
 			this->add_confirmButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->add_confirmButton->Location = System::Drawing::Point(219, 304);
 			this->add_confirmButton->Name = L"add_confirmButton";
@@ -427,6 +435,7 @@ namespace JoyCompiler {
 			// 
 			// contentPanel
 			// 
+			this->contentPanel->BackColor = System::Drawing::Color::Transparent;
 			this->contentPanel->Controls->Add(this->searchButton);
 			this->contentPanel->Controls->Add(this->backButton);
 			this->contentPanel->Controls->Add(this->delEventButton);
@@ -434,12 +443,12 @@ namespace JoyCompiler {
 			this->contentPanel->Controls->Add(this->label2);
 			this->contentPanel->Location = System::Drawing::Point(12, 1);
 			this->contentPanel->Name = L"contentPanel";
-			this->contentPanel->Size = System::Drawing::Size(297, 330);
+			this->contentPanel->Size = System::Drawing::Size(297, 358);
 			this->contentPanel->TabIndex = 31;
 			// 
 			// searchButton
 			// 
-			this->searchButton->BackColor = System::Drawing::Color::DarkGray;
+			this->searchButton->BackColor = System::Drawing::Color::Transparent;
 			this->searchButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->searchButton->Location = System::Drawing::Point(55, 189);
 			this->searchButton->Name = L"searchButton";
@@ -451,10 +460,10 @@ namespace JoyCompiler {
 			// 
 			// backButton
 			// 
-			this->backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->backButton->BackColor = System::Drawing::Color::Transparent;
 			this->backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->backButton->Location = System::Drawing::Point(15, 281);
+			this->backButton->Location = System::Drawing::Point(8, 309);
 			this->backButton->Margin = System::Windows::Forms::Padding(4);
 			this->backButton->Name = L"backButton";
 			this->backButton->Size = System::Drawing::Size(78, 37);
@@ -465,7 +474,7 @@ namespace JoyCompiler {
 			// 
 			// delEventButton
 			// 
-			this->delEventButton->BackColor = System::Drawing::Color::DarkGray;
+			this->delEventButton->BackColor = System::Drawing::Color::Transparent;
 			this->delEventButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->delEventButton->Location = System::Drawing::Point(55, 151);
 			this->delEventButton->Name = L"delEventButton";
@@ -477,7 +486,7 @@ namespace JoyCompiler {
 			// 
 			// addEventButton
 			// 
-			this->addEventButton->BackColor = System::Drawing::Color::DarkGray;
+			this->addEventButton->BackColor = System::Drawing::Color::Transparent;
 			this->addEventButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->addEventButton->Location = System::Drawing::Point(55, 113);
 			this->addEventButton->Name = L"addEventButton";
@@ -490,6 +499,7 @@ namespace JoyCompiler {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -501,6 +511,10 @@ namespace JoyCompiler {
 			// 
 			// deletePanel
 			// 
+			this->deletePanel->BackColor = System::Drawing::Color::Transparent;
+			this->deletePanel->Controls->Add(this->del_errorLabel1);
+			this->deletePanel->Controls->Add(this->del_errorLabel2);
+			this->deletePanel->Controls->Add(this->del_errorLabel3);
 			this->deletePanel->Controls->Add(this->label5);
 			this->deletePanel->Controls->Add(this->label3);
 			this->deletePanel->Controls->Add(this->del_yearInput);
@@ -516,10 +530,49 @@ namespace JoyCompiler {
 			this->deletePanel->Controls->Add(this->del_nameLabel);
 			this->deletePanel->Controls->Add(this->del_backButton);
 			this->deletePanel->Controls->Add(this->del_Label);
-			this->deletePanel->Location = System::Drawing::Point(10, 12);
+			this->deletePanel->Location = System::Drawing::Point(10, 1);
 			this->deletePanel->Name = L"deletePanel";
-			this->deletePanel->Size = System::Drawing::Size(307, 329);
+			this->deletePanel->Size = System::Drawing::Size(307, 358);
 			this->deletePanel->TabIndex = 35;
+			// 
+			// del_errorLabel1
+			// 
+			this->del_errorLabel1->AutoSize = true;
+			this->del_errorLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->del_errorLabel1->ForeColor = System::Drawing::Color::Red;
+			this->del_errorLabel1->Location = System::Drawing::Point(14, 275);
+			this->del_errorLabel1->Name = L"del_errorLabel1";
+			this->del_errorLabel1->Size = System::Drawing::Size(58, 26);
+			this->del_errorLabel1->TabIndex = 53;
+			this->del_errorLabel1->Text = L"*Error\r\nInvalid day";
+			this->del_errorLabel1->Visible = false;
+			// 
+			// del_errorLabel2
+			// 
+			this->del_errorLabel2->AutoSize = true;
+			this->del_errorLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->del_errorLabel2->ForeColor = System::Drawing::Color::Red;
+			this->del_errorLabel2->Location = System::Drawing::Point(102, 273);
+			this->del_errorLabel2->Name = L"del_errorLabel2";
+			this->del_errorLabel2->Size = System::Drawing::Size(70, 26);
+			this->del_errorLabel2->TabIndex = 52;
+			this->del_errorLabel2->Text = L"*Error\r\nInvalid month";
+			this->del_errorLabel2->Visible = false;
+			// 
+			// del_errorLabel3
+			// 
+			this->del_errorLabel3->AutoSize = true;
+			this->del_errorLabel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(177)));
+			this->del_errorLabel3->ForeColor = System::Drawing::Color::Red;
+			this->del_errorLabel3->Location = System::Drawing::Point(196, 275);
+			this->del_errorLabel3->Name = L"del_errorLabel3";
+			this->del_errorLabel3->Size = System::Drawing::Size(61, 26);
+			this->del_errorLabel3->TabIndex = 51;
+			this->del_errorLabel3->Text = L"*Error\r\nInvalid year";
+			this->del_errorLabel3->Visible = false;
 			// 
 			// label5
 			// 
@@ -546,6 +599,7 @@ namespace JoyCompiler {
 			this->del_yearInput->Name = L"del_yearInput";
 			this->del_yearInput->Size = System::Drawing::Size(66, 22);
 			this->del_yearInput->TabIndex = 47;
+			this->del_yearInput->TextChanged += gcnew System::EventHandler(this, &Content::del_yearInput_TextChanged);
 			// 
 			// del_monthInput
 			// 
@@ -554,6 +608,7 @@ namespace JoyCompiler {
 			this->del_monthInput->Name = L"del_monthInput";
 			this->del_monthInput->Size = System::Drawing::Size(66, 22);
 			this->del_monthInput->TabIndex = 46;
+			this->del_monthInput->TextChanged += gcnew System::EventHandler(this, &Content::del_monthInput_TextChanged);
 			// 
 			// label4
 			// 
@@ -571,12 +626,13 @@ namespace JoyCompiler {
 			this->del_dayInput->Name = L"del_dayInput";
 			this->del_dayInput->Size = System::Drawing::Size(66, 22);
 			this->del_dayInput->TabIndex = 45;
+			this->del_dayInput->TextChanged += gcnew System::EventHandler(this, &Content::del_dayInput_TextChanged);
 			// 
 			// del_confirmButton
 			// 
-			this->del_confirmButton->BackColor = System::Drawing::Color::DarkGray;
+			this->del_confirmButton->BackColor = System::Drawing::Color::Transparent;
 			this->del_confirmButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->del_confirmButton->Location = System::Drawing::Point(221, 282);
+			this->del_confirmButton->Location = System::Drawing::Point(221, 314);
 			this->del_confirmButton->Name = L"del_confirmButton";
 			this->del_confirmButton->Size = System::Drawing::Size(78, 37);
 			this->del_confirmButton->TabIndex = 4;
@@ -629,7 +685,6 @@ namespace JoyCompiler {
 			this->del_nameInput->Name = L"del_nameInput";
 			this->del_nameInput->Size = System::Drawing::Size(260, 22);
 			this->del_nameInput->TabIndex = 1;
-			this->del_nameInput->TextChanged += gcnew System::EventHandler(this, &Content::del_nameInput_TextChanged);
 			// 
 			// del_nameLabel
 			// 
@@ -642,10 +697,10 @@ namespace JoyCompiler {
 			// 
 			// del_backButton
 			// 
-			this->del_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->del_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->del_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->del_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->del_backButton->Location = System::Drawing::Point(8, 282);
+			this->del_backButton->Location = System::Drawing::Point(8, 314);
 			this->del_backButton->Margin = System::Windows::Forms::Padding(4);
 			this->del_backButton->Name = L"del_backButton";
 			this->del_backButton->Size = System::Drawing::Size(78, 37);
@@ -657,8 +712,9 @@ namespace JoyCompiler {
 			// del_Label
 			// 
 			this->del_Label->AutoSize = true;
+			this->del_Label->BackColor = System::Drawing::Color::Transparent;
 			this->del_Label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->del_Label->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 31.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->del_Label->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 31.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->del_Label->Location = System::Drawing::Point(16, 0);
 			this->del_Label->Name = L"del_Label";
@@ -668,6 +724,7 @@ namespace JoyCompiler {
 			// 
 			// searchPanel
 			// 
+			this->searchPanel->BackColor = System::Drawing::Color::Transparent;
 			this->searchPanel->Controls->Add(this->search_showAllButton);
 			this->searchPanel->Controls->Add(this->search_backButton);
 			this->searchPanel->Controls->Add(this->search_confirmButton);
@@ -680,16 +737,16 @@ namespace JoyCompiler {
 			this->searchPanel->Controls->Add(this->search_nameInput);
 			this->searchPanel->Controls->Add(this->search_searchLabel);
 			this->searchPanel->Controls->Add(this->search_Label);
-			this->searchPanel->Location = System::Drawing::Point(10, 12);
+			this->searchPanel->Location = System::Drawing::Point(10, 1);
 			this->searchPanel->Name = L"searchPanel";
-			this->searchPanel->Size = System::Drawing::Size(284, 344);
+			this->searchPanel->Size = System::Drawing::Size(314, 355);
 			this->searchPanel->TabIndex = 36;
 			// 
 			// search_showAllButton
 			// 
-			this->search_showAllButton->BackColor = System::Drawing::Color::DarkGray;
+			this->search_showAllButton->BackColor = System::Drawing::Color::Transparent;
 			this->search_showAllButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->search_showAllButton->Location = System::Drawing::Point(97, 294);
+			this->search_showAllButton->Location = System::Drawing::Point(116, 300);
 			this->search_showAllButton->Name = L"search_showAllButton";
 			this->search_showAllButton->Size = System::Drawing::Size(78, 46);
 			this->search_showAllButton->TabIndex = 37;
@@ -699,10 +756,10 @@ namespace JoyCompiler {
 			// 
 			// search_backButton
 			// 
-			this->search_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->search_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->search_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->search_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->search_backButton->Location = System::Drawing::Point(6, 299);
+			this->search_backButton->Location = System::Drawing::Point(6, 304);
 			this->search_backButton->Margin = System::Windows::Forms::Padding(4);
 			this->search_backButton->Name = L"search_backButton";
 			this->search_backButton->Size = System::Drawing::Size(78, 37);
@@ -713,9 +770,9 @@ namespace JoyCompiler {
 			// 
 			// search_confirmButton
 			// 
-			this->search_confirmButton->BackColor = System::Drawing::Color::DarkGray;
+			this->search_confirmButton->BackColor = System::Drawing::Color::Transparent;
 			this->search_confirmButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->search_confirmButton->Location = System::Drawing::Point(195, 298);
+			this->search_confirmButton->Location = System::Drawing::Point(221, 304);
 			this->search_confirmButton->Name = L"search_confirmButton";
 			this->search_confirmButton->Size = System::Drawing::Size(78, 37);
 			this->search_confirmButton->TabIndex = 5;
@@ -726,7 +783,7 @@ namespace JoyCompiler {
 			// search_warningLabel
 			// 
 			this->search_warningLabel->ForeColor = System::Drawing::Color::Red;
-			this->search_warningLabel->Location = System::Drawing::Point(1, 187);
+			this->search_warningLabel->Location = System::Drawing::Point(7, 188);
 			this->search_warningLabel->Name = L"search_warningLabel";
 			this->search_warningLabel->Size = System::Drawing::Size(236, 21);
 			this->search_warningLabel->TabIndex = 24;
@@ -747,7 +804,7 @@ namespace JoyCompiler {
 			// 
 			this->search_genComboBox->FormattingEnabled = true;
 			this->search_genComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Action", L"Drama", L"Comedy" });
-			this->search_genComboBox->Location = System::Drawing::Point(145, 262);
+			this->search_genComboBox->Location = System::Drawing::Point(168, 262);
 			this->search_genComboBox->MaxLength = 3;
 			this->search_genComboBox->Name = L"search_genComboBox";
 			this->search_genComboBox->Size = System::Drawing::Size(121, 24);
@@ -756,7 +813,7 @@ namespace JoyCompiler {
 			// search_genreLabel
 			// 
 			this->search_genreLabel->AutoSize = true;
-			this->search_genreLabel->Location = System::Drawing::Point(142, 240);
+			this->search_genreLabel->Location = System::Drawing::Point(165, 240);
 			this->search_genreLabel->Name = L"search_genreLabel";
 			this->search_genreLabel->Size = System::Drawing::Size(52, 17);
 			this->search_genreLabel->TabIndex = 21;
@@ -765,7 +822,7 @@ namespace JoyCompiler {
 			// search_catLabel
 			// 
 			this->search_catLabel->AutoSize = true;
-			this->search_catLabel->Location = System::Drawing::Point(3, 240);
+			this->search_catLabel->Location = System::Drawing::Point(10, 240);
 			this->search_catLabel->Name = L"search_catLabel";
 			this->search_catLabel->Size = System::Drawing::Size(69, 17);
 			this->search_catLabel->TabIndex = 20;
@@ -775,7 +832,7 @@ namespace JoyCompiler {
 			// 
 			this->search_catComboBox->FormattingEnabled = true;
 			this->search_catComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Movie", L"TVShow" });
-			this->search_catComboBox->Location = System::Drawing::Point(6, 262);
+			this->search_catComboBox->Location = System::Drawing::Point(13, 262);
 			this->search_catComboBox->MaxLength = 2;
 			this->search_catComboBox->Name = L"search_catComboBox";
 			this->search_catComboBox->Size = System::Drawing::Size(121, 24);
@@ -783,7 +840,7 @@ namespace JoyCompiler {
 			// 
 			// search_nameInput
 			// 
-			this->search_nameInput->Location = System::Drawing::Point(6, 162);
+			this->search_nameInput->Location = System::Drawing::Point(12, 163);
 			this->search_nameInput->MaxLength = 20;
 			this->search_nameInput->Name = L"search_nameInput";
 			this->search_nameInput->Size = System::Drawing::Size(260, 22);
@@ -793,7 +850,7 @@ namespace JoyCompiler {
 			// search_searchLabel
 			// 
 			this->search_searchLabel->AutoSize = true;
-			this->search_searchLabel->Location = System::Drawing::Point(3, 142);
+			this->search_searchLabel->Location = System::Drawing::Point(9, 143);
 			this->search_searchLabel->Name = L"search_searchLabel";
 			this->search_searchLabel->Size = System::Drawing::Size(115, 17);
 			this->search_searchLabel->TabIndex = 17;
@@ -802,6 +859,7 @@ namespace JoyCompiler {
 			// search_Label
 			// 
 			this->search_Label->AutoSize = true;
+			this->search_Label->BackColor = System::Drawing::Color::Transparent;
 			this->search_Label->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->search_Label->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -817,11 +875,12 @@ namespace JoyCompiler {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->add_backButton;
 			this->ClientSize = System::Drawing::Size(329, 368);
-			this->Controls->Add(this->searchPanel);
+			this->Controls->Add(this->addPanel);
 			this->Controls->Add(this->deletePanel);
 			this->Controls->Add(this->contentPanel);
-			this->Controls->Add(this->addPanel);
+			this->Controls->Add(this->searchPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->MaximizeBox = false;
 			this->Name = L"Content";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
@@ -856,7 +915,7 @@ namespace JoyCompiler {
 	private: System::Void add_confirmButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		add_errorLabel4->Visible = false;
 		if (add_nameInput->TextLength < 3 || add_catInput->TextLength < 3 || add_genInput->TextLength < 3 ||
-			 add_errorLabel5->Visible == true || add_errorLabel5->Visible == true ||
+			add_errorLabel5->Visible == true || add_errorLabel5->Visible == true ||
 			add_errorLabel7->Visible == true || add_errorLabel8->Visible == true)
 			this->add_confirmButton->BackColor = System::Drawing::Color::Red;
 		else {
@@ -898,76 +957,32 @@ namespace JoyCompiler {
 			add_errorLabel3->Visible = false;
 	}
 	private: System::Void add_dayInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try {
-			if (add_dayInput->TextLength != 2)
-				add_errorLabel8->Visible = true;
-			else {
-				add_errorLabel8->Visible = false;
-				stoi(marshal_as<string>(add_dayInput->Text));
-			}
-		}
-		catch (invalid_argument) {
+		if (add_dayInput->TextLength != 2 || checkIfDigit(marshal_as<string>(add_dayInput->Text)) == false)
 			add_errorLabel8->Visible = true;
-		}
+		else
+			add_errorLabel8->Visible = false;
 	}
 	private: System::Void add_monthInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try {
-			if (add_monthInput->TextLength != 2)
-				add_errorLabel7->Visible = true;
-			else {
-				add_errorLabel7->Visible = false;
-				stoi(marshal_as<string>(add_monthInput->Text));
-			}
-		}
-		catch (invalid_argument) {
+		if (add_monthInput->TextLength != 2 || checkIfDigit(marshal_as<string>(add_monthInput->Text)) == false)
 			add_errorLabel7->Visible = true;
-		}
+		else
+			add_errorLabel7->Visible = false;
 	}
 	private: System::Void add_yearInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try {
-			if (add_yearInput->TextLength != 4)
-				add_errorLabel5->Visible = true;
-			else {
-				add_errorLabel5->Visible = false;
-				stoi(marshal_as<string>(add_yearInput->Text));
-			}
-		}
-		catch (invalid_argument) {
+		if (add_yearInput->TextLength != 4 || checkIfDigit(marshal_as<string>(add_yearInput->Text)) == false)
 			add_errorLabel5->Visible = true;
-		}
+		else
+			add_errorLabel5->Visible = false;
+
 	}
 	private: System::Void addEventButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		contentPanel->Visible = false;
 		addPanel->Visible = true;
 	}
-	private: System::Void delEventButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		contentPanel->Visible = false;
-		deletePanel->Visible = true;
-	}
 	private: System::Void add_backButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		contentPanel->Visible = true;
 		addPanel->Visible = false;
 	}
-	private: System::Void del_confirmButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (del_nameInput->TextLength < 3 || del_dayInput->TextLength != 2 ||
-			del_monthInput->TextLength != 2 || del_yearInput->TextLength != 4)
-			this->del_confirmButton->BackColor = System::Drawing::Color::Red;
-		else {
-			this->del_confirmButton->BackColor = System::Drawing::Color::Red;
-			string date = marshal_as<string>(del_dayInput->Text) + "." + marshal_as<string>(del_monthInput->Text) + "." + marshal_as<string>(del_yearInput->Text);
-			if (deleteEvent(marshal_as<string>(del_nameInput->Text), marshal_as<string>(del_catComboBox->Text), marshal_as<string>(del_genComboBox->Text), date))
-				MessageBox::Show("Succssessfuly deleted the " + del_catComboBox->Text + ": " + del_nameInput->Text + '.');
-			else
-				MessageBox::Show("Nothing found.");
-			addPanel->Visible = false;
-			contentPanel->Visible = true;
-		}
-	}
-	private: System::Void del_backButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		contentPanel->Visible = true;
-		deletePanel->Visible = false;
-	}
-	private: System::Void del_nameInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {}
 	private: System::Void backButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Visible = false;
 		obj->Visible = true;
@@ -1020,6 +1035,47 @@ namespace JoyCompiler {
 		SearchResult^ result = gcnew SearchResult(this);
 		result->Show();
 
+	}
+	private: System::Void del_dayInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		if (del_dayInput->TextLength != 2 || checkIfDigit(marshal_as<string>(del_dayInput->Text)) == false)
+			del_errorLabel1->Visible = true;
+		else
+			del_errorLabel1->Visible = false;
+	}
+	private: System::Void del_monthInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		if (del_monthInput->TextLength != 2 || checkIfDigit(marshal_as<string>(del_monthInput->Text)) == false)
+			del_errorLabel2->Visible = true;
+		else
+			del_errorLabel2->Visible = false;
+	}
+	private: System::Void del_yearInput_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		if (del_yearInput->TextLength != 4 || checkIfDigit(marshal_as<string>(del_yearInput->Text)) == false)
+			del_errorLabel3->Visible = true;
+		else
+			del_errorLabel3->Visible = false;
+	}
+	private: System::Void del_confirmButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (del_nameInput->TextLength < 3 || del_errorLabel1->Visible == true || del_errorLabel2->Visible == true ||
+			del_errorLabel3->Visible == true)
+			this->del_confirmButton->BackColor = System::Drawing::Color::Red;
+		else {
+			this->del_confirmButton->BackColor = System::Drawing::Color::DarkGray;
+			string date = marshal_as<string>(del_dayInput->Text) + "." + marshal_as<string>(del_monthInput->Text) + "." + marshal_as<string>(del_yearInput->Text);
+			if (deleteEvent(marshal_as<string>(del_nameInput->Text), marshal_as<string>(del_catComboBox->Text), marshal_as<string>(del_genComboBox->Text), date))
+				MessageBox::Show("Succssessfuly deleted the " + del_catComboBox->Text + ": " + del_nameInput->Text + ".");
+			else
+				MessageBox::Show("Nothing found.");
+			addPanel->Visible = false;
+			contentPanel->Visible = true;
+		}
+	}
+	private: System::Void del_backButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		contentPanel->Visible = true;
+		deletePanel->Visible = false;
+	}
+	private: System::Void delEventButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		contentPanel->Visible = false;
+		deletePanel->Visible = true;
 	}
 	};
 }

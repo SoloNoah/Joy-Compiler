@@ -117,6 +117,7 @@ namespace JoyCompiler {
 			// 
 			// userPanel
 			// 
+			this->userPanel->BackColor = System::Drawing::Color::Transparent;
 			this->userPanel->Controls->Add(this->linkLabel);
 			this->userPanel->Controls->Add(this->user_reportButton);
 			this->userPanel->Controls->Add(this->user_watchListButton);
@@ -139,7 +140,7 @@ namespace JoyCompiler {
 			// 
 			// user_reportButton
 			// 
-			this->user_reportButton->BackColor = System::Drawing::Color::DarkGray;
+			this->user_reportButton->BackColor = System::Drawing::Color::Transparent;
 			this->user_reportButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->user_reportButton->Location = System::Drawing::Point(28, 93);
 			this->user_reportButton->Name = L"user_reportButton";
@@ -152,7 +153,7 @@ namespace JoyCompiler {
 			// 
 			// user_watchListButton
 			// 
-			this->user_watchListButton->BackColor = System::Drawing::Color::DarkGray;
+			this->user_watchListButton->BackColor = System::Drawing::Color::Transparent;
 			this->user_watchListButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->user_watchListButton->Location = System::Drawing::Point(28, 55);
 			this->user_watchListButton->Name = L"user_watchListButton";
@@ -165,7 +166,7 @@ namespace JoyCompiler {
 			// 
 			// user_searchButton
 			// 
-			this->user_searchButton->BackColor = System::Drawing::Color::DarkGray;
+			this->user_searchButton->BackColor = System::Drawing::Color::Transparent;
 			this->user_searchButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->user_searchButton->Location = System::Drawing::Point(28, 17);
 			this->user_searchButton->Name = L"user_searchButton";
@@ -178,7 +179,7 @@ namespace JoyCompiler {
 			// 
 			// backButton
 			// 
-			this->backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->backButton->BackColor = System::Drawing::Color::Transparent;
 			this->backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->backButton->Location = System::Drawing::Point(9, 344);
@@ -191,6 +192,7 @@ namespace JoyCompiler {
 			// 
 			// adminPanel
 			// 
+			this->adminPanel->BackColor = System::Drawing::Color::Transparent;
 			this->adminPanel->Controls->Add(this->admin_conPromReports);
 			this->adminPanel->Controls->Add(this->admin_contentReports);
 			this->adminPanel->Controls->Add(this->admin_userReports);
@@ -204,7 +206,7 @@ namespace JoyCompiler {
 			// 
 			// admin_conPromReports
 			// 
-			this->admin_conPromReports->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_conPromReports->BackColor = System::Drawing::Color::Transparent;
 			this->admin_conPromReports->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_conPromReports->Location = System::Drawing::Point(14, 175);
 			this->admin_conPromReports->Margin = System::Windows::Forms::Padding(4);
@@ -218,7 +220,7 @@ namespace JoyCompiler {
 			// 
 			// admin_contentReports
 			// 
-			this->admin_contentReports->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_contentReports->BackColor = System::Drawing::Color::Transparent;
 			this->admin_contentReports->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_contentReports->Location = System::Drawing::Point(14, 135);
 			this->admin_contentReports->Margin = System::Windows::Forms::Padding(4);
@@ -232,7 +234,7 @@ namespace JoyCompiler {
 			// 
 			// admin_userReports
 			// 
-			this->admin_userReports->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_userReports->BackColor = System::Drawing::Color::Transparent;
 			this->admin_userReports->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_userReports->Location = System::Drawing::Point(14, 95);
 			this->admin_userReports->Margin = System::Windows::Forms::Padding(4);
@@ -246,7 +248,7 @@ namespace JoyCompiler {
 			// 
 			// admin_perEditButton
 			// 
-			this->admin_perEditButton->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_perEditButton->BackColor = System::Drawing::Color::Transparent;
 			this->admin_perEditButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_perEditButton->Location = System::Drawing::Point(14, 215);
 			this->admin_perEditButton->Margin = System::Windows::Forms::Padding(4);
@@ -260,7 +262,7 @@ namespace JoyCompiler {
 			// 
 			// admin_bugReportButton
 			// 
-			this->admin_bugReportButton->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_bugReportButton->BackColor = System::Drawing::Color::Transparent;
 			this->admin_bugReportButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_bugReportButton->Location = System::Drawing::Point(14, 53);
 			this->admin_bugReportButton->Margin = System::Windows::Forms::Padding(4);
@@ -274,7 +276,7 @@ namespace JoyCompiler {
 			// 
 			// admin_contentButton
 			// 
-			this->admin_contentButton->BackColor = System::Drawing::Color::DarkGray;
+			this->admin_contentButton->BackColor = System::Drawing::Color::Transparent;
 			this->admin_contentButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->admin_contentButton->Location = System::Drawing::Point(14, 15);
 			this->admin_contentButton->Margin = System::Windows::Forms::Padding(4);
@@ -288,6 +290,7 @@ namespace JoyCompiler {
 			// 
 			// conPromPanel
 			// 
+			this->conPromPanel->BackColor = System::Drawing::Color::Transparent;
 			this->conPromPanel->Controls->Add(this->button2);
 			this->conPromPanel->Controls->Add(this->button1);
 			this->conPromPanel->Controls->Add(this->conProm_editButton);
@@ -299,7 +302,7 @@ namespace JoyCompiler {
 			// 
 			// button2
 			// 
-			this->button2->BackColor = System::Drawing::Color::DarkGray;
+			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Location = System::Drawing::Point(31, 135);
 			this->button2->Name = L"button2";
@@ -312,7 +315,7 @@ namespace JoyCompiler {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::DarkGray;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Location = System::Drawing::Point(31, 97);
 			this->button1->Name = L"button1";
@@ -325,7 +328,7 @@ namespace JoyCompiler {
 			// 
 			// conProm_editButton
 			// 
-			this->conProm_editButton->BackColor = System::Drawing::Color::DarkGray;
+			this->conProm_editButton->BackColor = System::Drawing::Color::Transparent;
 			this->conProm_editButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->conProm_editButton->Location = System::Drawing::Point(31, 21);
 			this->conProm_editButton->Name = L"conProm_editButton";
@@ -338,7 +341,7 @@ namespace JoyCompiler {
 			// 
 			// conProm_reportButton
 			// 
-			this->conProm_reportButton->BackColor = System::Drawing::Color::DarkGray;
+			this->conProm_reportButton->BackColor = System::Drawing::Color::Transparent;
 			this->conProm_reportButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->conProm_reportButton->Location = System::Drawing::Point(31, 59);
 			this->conProm_reportButton->Name = L"conProm_reportButton";
@@ -352,10 +355,11 @@ namespace JoyCompiler {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 34.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(-8, 9);
+			this->label2->Location = System::Drawing::Point(-2, 9);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(332, 66);
 			this->label2->TabIndex = 31;
@@ -369,9 +373,10 @@ namespace JoyCompiler {
 			this->ClientSize = System::Drawing::Size(336, 387);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->backButton);
+			this->Controls->Add(this->adminPanel);
 			this->Controls->Add(this->userPanel);
 			this->Controls->Add(this->conPromPanel);
-			this->Controls->Add(this->adminPanel);
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"Menus";
 			this->Text = L"Menu";

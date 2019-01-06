@@ -47,7 +47,8 @@ namespace JoyCompiler {
 	private: System::Windows::Forms::Label^  faqLabel;
 	protected:
 	private: System::Windows::Forms::Button^  faq_backButton;
-	private: System::Windows::Forms::TextBox^  outputTextBox;
+	private: System::Windows::Forms::ListBox^  outputTextBox;
+
 
 
 	private:
@@ -65,24 +66,25 @@ namespace JoyCompiler {
 		{
 			this->faqLabel = (gcnew System::Windows::Forms::Label());
 			this->faq_backButton = (gcnew System::Windows::Forms::Button());
-			this->outputTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->outputTextBox = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// faqLabel
 			// 
 			this->faqLabel->AutoSize = true;
+			this->faqLabel->BackColor = System::Drawing::Color::Transparent;
 			this->faqLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faqLabel->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->faqLabel->Location = System::Drawing::Point(72, 6);
+			this->faqLabel->Location = System::Drawing::Point(14, 6);
 			this->faqLabel->Name = L"faqLabel";
-			this->faqLabel->Size = System::Drawing::Size(127, 69);
+			this->faqLabel->Size = System::Drawing::Size(269, 69);
 			this->faqLabel->TabIndex = 37;
-			this->faqLabel->Text = L"Ads";
+			this->faqLabel->Text = L"Your Ads";
 			// 
 			// faq_backButton
 			// 
-			this->faq_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->faq_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->faq_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->faq_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faq_backButton->Location = System::Drawing::Point(13, 257);
@@ -96,10 +98,13 @@ namespace JoyCompiler {
 			// 
 			// outputTextBox
 			// 
+			this->outputTextBox->FormattingEnabled = true;
+			this->outputTextBox->HorizontalScrollbar = true;
+			this->outputTextBox->ItemHeight = 16;
 			this->outputTextBox->Location = System::Drawing::Point(13, 78);
-			this->outputTextBox->Multiline = true;
 			this->outputTextBox->Name = L"outputTextBox";
-			this->outputTextBox->Size = System::Drawing::Size(245, 160);
+			this->outputTextBox->SelectionMode = System::Windows::Forms::SelectionMode::None;
+			this->outputTextBox->Size = System::Drawing::Size(270, 164);
 			this->outputTextBox->TabIndex = 38;
 			// 
 			// AdsReport
@@ -110,6 +115,7 @@ namespace JoyCompiler {
 			this->Controls->Add(this->outputTextBox);
 			this->Controls->Add(this->faqLabel);
 			this->Controls->Add(this->faq_backButton);
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->Name = L"AdsReport";
 			this->Text = L"AdsReport";
 			this->Load += gcnew System::EventHandler(this, &AdsReport::AdsReport_Load);
@@ -120,43 +126,25 @@ namespace JoyCompiler {
 #pragma endregion
 	private: System::Void AdsReport_Load(System::Object^  sender, System::EventArgs^  e) {
 		ifstream file;
-		file.open("TotalAds.txt", ios::beg);
-		string temp, str;
-		file.seekg(0, file.end);
-		int length = file.tellg();
-		file.clear();
-		file.seekg(0, ios::beg);
-		if (length != 0) {
-			while (!file.eof()) {
-				getline(file, temp);
-				if (globalUsername == temp) {
-					for (int i = 0; i < 2; i++) {
-						temp.clear();
-						getline(file, temp);
-						str += temp;
-						str += "\n";
-					}
-					str += "\n";
-					temp.clear();
+		string adName, adUrl;
+		if (checkIfFileEmpty("TotalAds.txt") == false) {
+			file.open("TotalAds.txt");
+			while (getline(file, adName)) {
+				if (globalUsername == adName) {
+					getline(file, adName);
+					getline(file, adUrl);
+					adName += ": " + adUrl;
+					outputTextBox->Items->Add(gcnew String(adName.c_str()));
 				}
 				else {
-					getline(file, temp);
-					getline(file, temp);
-					temp.clear();
+					getline(file, adName);
+					getline(file, adName);
 				}
 			}
-			String^ toPrint = gcnew String(str.c_str());
-			MessageBox::Show(toPrint);
-			cout << str;
-			outputTextBox->ReadOnly = false;
-			outputTextBox->Text = toPrint;
-			outputTextBox->ReadOnly = true;
+			file.close();
 		}
-		else {
-			outputTextBox->Text = "You have no ads!";
-			outputTextBox->ReadOnly = true;
-		}
-		file.close();
+		else
+			outputTextBox->Items->Add("You have no ads!");
 	}
 	private: System::Void faq_backButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Visible = false;

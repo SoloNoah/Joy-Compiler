@@ -1,5 +1,16 @@
-who are we?
-we are students from sce.
+Q: What can I do with JoyCompiler?
+A: You can follow you favorite Tv shows/ Movies/ etc..
 
-what we do?
-we compile.
+Q: How to get started on JoyCompiler?
+A: [1] Search your favorite category and genre or search the specific event you want by name.
+    [2] Add the event to you watchlist.
+
+Q: Can I delete events from my watchlist?
+A: Of course you can!
+    Just select the event you want to delete and press delete.
+
+Q: I've encounterd a bug! can I report it?
+A: Yes! Just click on Tech Support on main screen and select Bug Report.
+
+Q: Can I upload some content?
+A: Yes, Just contant the admins and ask for permissions.

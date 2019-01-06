@@ -78,7 +78,7 @@ namespace JoyCompiler {
 			// 
 			// addButton
 			// 
-			this->addButton->BackColor = System::Drawing::Color::DarkGray;
+			this->addButton->BackColor = System::Drawing::Color::Transparent;
 			this->addButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->addButton->Location = System::Drawing::Point(218, 232);
 			this->addButton->Name = L"addButton";
@@ -90,7 +90,7 @@ namespace JoyCompiler {
 			// 
 			// backButton
 			// 
-			this->backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->backButton->BackColor = System::Drawing::Color::Transparent;
 			this->backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->backButton->Location = System::Drawing::Point(11, 232);
 			this->backButton->Name = L"backButton";
@@ -111,6 +111,7 @@ namespace JoyCompiler {
 			// nameLabel
 			// 
 			this->nameLabel->AutoSize = true;
+			this->nameLabel->BackColor = System::Drawing::Color::Transparent;
 			this->nameLabel->Location = System::Drawing::Point(12, 71);
 			this->nameLabel->Name = L"nameLabel";
 			this->nameLabel->Size = System::Drawing::Size(49, 17);
@@ -120,6 +121,7 @@ namespace JoyCompiler {
 			// linkLabel
 			// 
 			this->linkLabel->AutoSize = true;
+			this->linkLabel->BackColor = System::Drawing::Color::Transparent;
 			this->linkLabel->Location = System::Drawing::Point(12, 116);
 			this->linkLabel->Name = L"linkLabel";
 			this->linkLabel->Size = System::Drawing::Size(38, 17);
@@ -136,6 +138,7 @@ namespace JoyCompiler {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 31.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -156,6 +159,7 @@ namespace JoyCompiler {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Location = System::Drawing::Point(12, 167);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(294, 34);
@@ -176,6 +180,7 @@ namespace JoyCompiler {
 			this->Controls->Add(this->nameInput);
 			this->Controls->Add(this->backButton);
 			this->Controls->Add(this->addButton);
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"Ads";
 			this->Text = L"Ads";
@@ -187,8 +192,10 @@ namespace JoyCompiler {
 	private: System::Void addButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (nameInput->TextLength <= 40 && nameInput->TextLength >= 3) {
 			this->addButton->BackColor = System::Drawing::Color::DarkGray;
-			writeToDataBase(nameInput->Text, linkInput->Text, priorityInput->Text, "NULL", "Ads");
-			MessageBox::Show("Ad added successfully!");
+			if (writeToDataBase(nameInput->Text, linkInput->Text, priorityInput->Text, "NULL", "Ads") == true)
+				MessageBox::Show("Ad added successfully!");
+			else
+				MessageBox::Show("You cant add another ad with the same name.");
 		}
 		else
 			this->addButton->BackColor = System::Drawing::Color::Red;

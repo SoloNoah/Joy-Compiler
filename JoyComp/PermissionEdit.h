@@ -80,7 +80,7 @@ namespace JoyCompiler {
 			// 
 			// backButton
 			// 
-			this->backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->backButton->BackColor = System::Drawing::Color::Transparent;
 			this->backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->backButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
@@ -96,6 +96,7 @@ namespace JoyCompiler {
 			// infoLabel1
 			// 
 			this->infoLabel1->AutoSize = true;
+			this->infoLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->infoLabel1->Location = System::Drawing::Point(71, 147);
 			this->infoLabel1->Name = L"infoLabel1";
 			this->infoLabel1->Size = System::Drawing::Size(122, 17);
@@ -113,6 +114,7 @@ namespace JoyCompiler {
 			// infoLabel2
 			// 
 			this->infoLabel2->AutoSize = true;
+			this->infoLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->infoLabel2->Location = System::Drawing::Point(71, 212);
 			this->infoLabel2->Name = L"infoLabel2";
 			this->infoLabel2->Size = System::Drawing::Size(253, 34);
@@ -129,7 +131,7 @@ namespace JoyCompiler {
 			// 
 			// proccedButton
 			// 
-			this->proccedButton->BackColor = System::Drawing::Color::DarkGray;
+			this->proccedButton->BackColor = System::Drawing::Color::Transparent;
 			this->proccedButton->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->proccedButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -144,6 +146,7 @@ namespace JoyCompiler {
 			// faqLabel
 			// 
 			this->faqLabel->AutoSize = true;
+			this->faqLabel->BackColor = System::Drawing::Color::Transparent;
 			this->faqLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->faqLabel->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -159,6 +162,7 @@ namespace JoyCompiler {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->backButton;
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->ClientSize = System::Drawing::Size(386, 355);
 			this->Controls->Add(this->faqLabel);
 			this->Controls->Add(this->proccedButton);

@@ -108,9 +108,9 @@ namespace JoyCompiler {
 			// loginButton
 			// 
 			this->loginButton->AutoEllipsis = true;
-			this->loginButton->BackColor = System::Drawing::Color::DarkGray;
+			this->loginButton->BackColor = System::Drawing::Color::Transparent;
 			this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->loginButton->Location = System::Drawing::Point(217, 148);
+			this->loginButton->Location = System::Drawing::Point(313, 209);
 			this->loginButton->Name = L"loginButton";
 			this->loginButton->Size = System::Drawing::Size(78, 37);
 			this->loginButton->TabIndex = 4;
@@ -121,7 +121,7 @@ namespace JoyCompiler {
 			// login_userNameInput
 			// 
 			this->login_userNameInput->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->login_userNameInput->Location = System::Drawing::Point(19, 47);
+			this->login_userNameInput->Location = System::Drawing::Point(85, 67);
 			this->login_userNameInput->MaxLength = 20;
 			this->login_userNameInput->Name = L"login_userNameInput";
 			this->login_userNameInput->Size = System::Drawing::Size(189, 22);
@@ -131,7 +131,7 @@ namespace JoyCompiler {
 			// login_passInput
 			// 
 			this->login_passInput->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->login_passInput->Location = System::Drawing::Point(19, 92);
+			this->login_passInput->Location = System::Drawing::Point(85, 130);
 			this->login_passInput->MaxLength = 20;
 			this->login_passInput->Name = L"login_passInput";
 			this->login_passInput->PasswordChar = '*';
@@ -143,7 +143,7 @@ namespace JoyCompiler {
 			// 
 			this->login_userNameLabel->AutoSize = true;
 			this->login_userNameLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->login_userNameLabel->Location = System::Drawing::Point(16, 27);
+			this->login_userNameLabel->Location = System::Drawing::Point(82, 47);
 			this->login_userNameLabel->Name = L"login_userNameLabel";
 			this->login_userNameLabel->Size = System::Drawing::Size(77, 17);
 			this->login_userNameLabel->TabIndex = 3;
@@ -153,7 +153,7 @@ namespace JoyCompiler {
 			// 
 			this->login_passwordLabel->AutoSize = true;
 			this->login_passwordLabel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->login_passwordLabel->Location = System::Drawing::Point(20, 72);
+			this->login_passwordLabel->Location = System::Drawing::Point(86, 110);
 			this->login_passwordLabel->Name = L"login_passwordLabel";
 			this->login_passwordLabel->Size = System::Drawing::Size(73, 17);
 			this->login_passwordLabel->TabIndex = 4;
@@ -161,10 +161,10 @@ namespace JoyCompiler {
 			// 
 			// regButton
 			// 
-			this->regButton->BackColor = System::Drawing::Color::DarkGray;
+			this->regButton->BackColor = System::Drawing::Color::Transparent;
 			this->regButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->regButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->regButton->Location = System::Drawing::Point(12, 149);
+			this->regButton->Location = System::Drawing::Point(20, 209);
 			this->regButton->Name = L"regButton";
 			this->regButton->Size = System::Drawing::Size(78, 37);
 			this->regButton->TabIndex = 3;
@@ -178,7 +178,7 @@ namespace JoyCompiler {
 			this->login_errorLabel1->BackColor = System::Drawing::SystemColors::Control;
 			this->login_errorLabel1->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->login_errorLabel1->ForeColor = System::Drawing::Color::Red;
-			this->login_errorLabel1->Location = System::Drawing::Point(214, 47);
+			this->login_errorLabel1->Location = System::Drawing::Point(280, 67);
 			this->login_errorLabel1->Name = L"login_errorLabel1";
 			this->login_errorLabel1->Size = System::Drawing::Size(45, 17);
 			this->login_errorLabel1->TabIndex = 7;
@@ -191,7 +191,7 @@ namespace JoyCompiler {
 			this->login_errorLabel2->BackColor = System::Drawing::SystemColors::Control;
 			this->login_errorLabel2->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->login_errorLabel2->ForeColor = System::Drawing::Color::Red;
-			this->login_errorLabel2->Location = System::Drawing::Point(214, 92);
+			this->login_errorLabel2->Location = System::Drawing::Point(280, 130);
 			this->login_errorLabel2->Name = L"login_errorLabel2";
 			this->login_errorLabel2->Size = System::Drawing::Size(45, 17);
 			this->login_errorLabel2->TabIndex = 8;
@@ -200,6 +200,7 @@ namespace JoyCompiler {
 			// 
 			// loginPanel
 			// 
+			this->loginPanel->BackColor = System::Drawing::Color::Transparent;
 			this->loginPanel->Controls->Add(this->login_userNameLabel);
 			this->loginPanel->Controls->Add(this->loginButton);
 			this->loginPanel->Controls->Add(this->login_errorLabel2);
@@ -208,13 +209,15 @@ namespace JoyCompiler {
 			this->loginPanel->Controls->Add(this->login_passInput);
 			this->loginPanel->Controls->Add(this->login_passwordLabel);
 			this->loginPanel->Controls->Add(this->regButton);
-			this->loginPanel->Location = System::Drawing::Point(5, 73);
+			this->loginPanel->ForeColor = System::Drawing::Color::Black;
+			this->loginPanel->Location = System::Drawing::Point(21, 61);
 			this->loginPanel->Name = L"loginPanel";
-			this->loginPanel->Size = System::Drawing::Size(310, 198);
+			this->loginPanel->Size = System::Drawing::Size(407, 261);
 			this->loginPanel->TabIndex = 10;
 			// 
 			// registerPanel
 			// 
+			this->registerPanel->BackColor = System::Drawing::Color::Transparent;
 			this->registerPanel->Controls->Add(this->reg_backButton);
 			this->registerPanel->Controls->Add(this->reg_lastNameLabel);
 			this->registerPanel->Controls->Add(this->reg_warningLabel);
@@ -227,18 +230,18 @@ namespace JoyCompiler {
 			this->registerPanel->Controls->Add(this->reg_userNameLabel);
 			this->registerPanel->Controls->Add(this->reg_passLabel);
 			this->registerPanel->Controls->Add(this->reg_nameLabel);
-			this->registerPanel->Location = System::Drawing::Point(11, 73);
+			this->registerPanel->Location = System::Drawing::Point(25, 71);
 			this->registerPanel->Name = L"registerPanel";
-			this->registerPanel->Size = System::Drawing::Size(315, 221);
+			this->registerPanel->Size = System::Drawing::Size(403, 251);
 			this->registerPanel->TabIndex = 11;
 			this->registerPanel->Visible = false;
 			// 
 			// reg_backButton
 			// 
-			this->reg_backButton->BackColor = System::Drawing::Color::DarkGray;
+			this->reg_backButton->BackColor = System::Drawing::Color::Transparent;
 			this->reg_backButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->reg_backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->reg_backButton->Location = System::Drawing::Point(16, 178);
+			this->reg_backButton->Location = System::Drawing::Point(16, 199);
 			this->reg_backButton->Name = L"reg_backButton";
 			this->reg_backButton->Size = System::Drawing::Size(78, 37);
 			this->reg_backButton->TabIndex = 9;
@@ -249,7 +252,7 @@ namespace JoyCompiler {
 			// reg_lastNameLabel
 			// 
 			this->reg_lastNameLabel->AutoSize = true;
-			this->reg_lastNameLabel->Location = System::Drawing::Point(163, 10);
+			this->reg_lastNameLabel->Location = System::Drawing::Point(211, 12);
 			this->reg_lastNameLabel->Name = L"reg_lastNameLabel";
 			this->reg_lastNameLabel->Size = System::Drawing::Size(80, 17);
 			this->reg_lastNameLabel->TabIndex = 28;
@@ -258,7 +261,7 @@ namespace JoyCompiler {
 			// reg_warningLabel
 			// 
 			this->reg_warningLabel->ForeColor = System::Drawing::Color::Red;
-			this->reg_warningLabel->Location = System::Drawing::Point(163, 79);
+			this->reg_warningLabel->Location = System::Drawing::Point(211, 81);
 			this->reg_warningLabel->Name = L"reg_warningLabel";
 			this->reg_warningLabel->Size = System::Drawing::Size(95, 56);
 			this->reg_warningLabel->TabIndex = 27;
@@ -267,16 +270,16 @@ namespace JoyCompiler {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(13, 118);
+			this->label4->Location = System::Drawing::Point(61, 120);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(0, 17);
 			this->label4->TabIndex = 26;
 			// 
 			// reg_registerButton
 			// 
-			this->reg_registerButton->BackColor = System::Drawing::Color::DarkGray;
+			this->reg_registerButton->BackColor = System::Drawing::Color::Transparent;
 			this->reg_registerButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->reg_registerButton->Location = System::Drawing::Point(216, 176);
+			this->reg_registerButton->Location = System::Drawing::Point(309, 199);
 			this->reg_registerButton->Name = L"reg_registerButton";
 			this->reg_registerButton->Size = System::Drawing::Size(78, 37);
 			this->reg_registerButton->TabIndex = 10;
@@ -286,7 +289,7 @@ namespace JoyCompiler {
 			// 
 			// reg_lastNameInput
 			// 
-			this->reg_lastNameInput->Location = System::Drawing::Point(166, 30);
+			this->reg_lastNameInput->Location = System::Drawing::Point(214, 32);
 			this->reg_lastNameInput->MaxLength = 20;
 			this->reg_lastNameInput->Name = L"reg_lastNameInput";
 			this->reg_lastNameInput->Size = System::Drawing::Size(115, 22);
@@ -294,7 +297,7 @@ namespace JoyCompiler {
 			// 
 			// reg_passInput
 			// 
-			this->reg_passInput->Location = System::Drawing::Point(6, 148);
+			this->reg_passInput->Location = System::Drawing::Point(54, 150);
 			this->reg_passInput->MaxLength = 20;
 			this->reg_passInput->Name = L"reg_passInput";
 			this->reg_passInput->PasswordChar = '*';
@@ -303,7 +306,7 @@ namespace JoyCompiler {
 			// 
 			// reg_userNameInput
 			// 
-			this->reg_userNameInput->Location = System::Drawing::Point(6, 89);
+			this->reg_userNameInput->Location = System::Drawing::Point(54, 91);
 			this->reg_userNameInput->MaxLength = 20;
 			this->reg_userNameInput->Name = L"reg_userNameInput";
 			this->reg_userNameInput->Size = System::Drawing::Size(115, 22);
@@ -311,7 +314,7 @@ namespace JoyCompiler {
 			// 
 			// reg_nameInput
 			// 
-			this->reg_nameInput->Location = System::Drawing::Point(6, 30);
+			this->reg_nameInput->Location = System::Drawing::Point(54, 32);
 			this->reg_nameInput->MaxLength = 20;
 			this->reg_nameInput->Name = L"reg_nameInput";
 			this->reg_nameInput->Size = System::Drawing::Size(115, 22);
@@ -320,7 +323,7 @@ namespace JoyCompiler {
 			// reg_userNameLabel
 			// 
 			this->reg_userNameLabel->AutoSize = true;
-			this->reg_userNameLabel->Location = System::Drawing::Point(6, 69);
+			this->reg_userNameLabel->Location = System::Drawing::Point(54, 71);
 			this->reg_userNameLabel->Name = L"reg_userNameLabel";
 			this->reg_userNameLabel->Size = System::Drawing::Size(77, 17);
 			this->reg_userNameLabel->TabIndex = 20;
@@ -329,7 +332,7 @@ namespace JoyCompiler {
 			// reg_passLabel
 			// 
 			this->reg_passLabel->AutoSize = true;
-			this->reg_passLabel->Location = System::Drawing::Point(6, 128);
+			this->reg_passLabel->Location = System::Drawing::Point(54, 130);
 			this->reg_passLabel->Name = L"reg_passLabel";
 			this->reg_passLabel->Size = System::Drawing::Size(73, 17);
 			this->reg_passLabel->TabIndex = 19;
@@ -338,7 +341,7 @@ namespace JoyCompiler {
 			// reg_nameLabel
 			// 
 			this->reg_nameLabel->AutoSize = true;
-			this->reg_nameLabel->Location = System::Drawing::Point(6, 10);
+			this->reg_nameLabel->Location = System::Drawing::Point(54, 12);
 			this->reg_nameLabel->Name = L"reg_nameLabel";
 			this->reg_nameLabel->Size = System::Drawing::Size(53, 17);
 			this->reg_nameLabel->TabIndex = 18;
@@ -347,10 +350,12 @@ namespace JoyCompiler {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(-1, 1);
+			this->label2->ForeColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(48, -1);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(345, 69);
 			this->label2->TabIndex = 31;
@@ -361,16 +366,18 @@ namespace JoyCompiler {
 			this->AcceptButton = this->loginButton;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(328, 295);
+			this->ClientSize = System::Drawing::Size(460, 321);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->loginPanel);
 			this->Controls->Add(this->registerPanel);
+			this->Controls->Add(this->loginPanel);
 			this->ForeColor = System::Drawing::Color::Black;
+			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->HelpButton = true;
 			this->Name = L"Login";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Text = L"Login";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->loginPanel->ResumeLayout(false);
 			this->loginPanel->PerformLayout();
 			this->registerPanel->ResumeLayout(false);
@@ -447,5 +454,7 @@ namespace JoyCompiler {
 				MessageBox::Show("There already a user with that username.\nPlease choose other username.");
 		}
 	}
-	};
+	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

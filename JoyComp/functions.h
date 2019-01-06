@@ -32,8 +32,8 @@ namespace JoyCompiler {
 
 	///============================== Function Declarations ============================
 	Date getDate(string);
-	int cmpDates(Date, Date); //If return is -1 => not good
-	bool writeToWatchList(string); //If true => good, false => not good
+	int cmpDates(Date, Date);
+	bool writeToWatchList(string);
 	string currentDateTime();
 	string printAllFile(string);
 	void createLogFile(string);
@@ -44,15 +44,15 @@ namespace JoyCompiler {
 	string removeLastWord(string);
 	string findContentByCatAndGen(string, string, string);
 	void deleteLine(string, string);
-	bool editPermission(String^, string); //If true => good, false => not good
-	bool findUser(string, string); //If true => good, false => not good
+	bool editPermission(String^, string);
+	bool findUser(string, string);
 	void moveUser(string, string);
-	bool checkIfBelongToUser(string); //If true => good, false => not good
-	bool deleteEvent(string, string, string); //If true => good, false => not good
-	void writeToDataBase(String^, String^, String^, String^, string);
+	bool checkIfBelongToUser(string);
+	bool deleteEvent(string, string, string);
+	bool writeToDataBase(String^, String^, String^, String^, string);
 	int getNumberOfLines(char*);
-	int findUserName(string); //If return value is -1 => not good
-	int loginCheck(string, string); //If return value is -1 => not good
+	int findUserName(string);
+	int loginCheck(string, string);
 
 	///============================== Struct functions =================================
 	Date getDate(string line) {
@@ -113,6 +113,7 @@ namespace JoyCompiler {
 					return RIGHT;
 			}
 		}
+		return -1;
 	}
 
 	bool isGoodDate(int day, int month, int year) {
@@ -128,6 +129,10 @@ namespace JoyCompiler {
 		if (month == 4 || month == 6 || month == 9 || month == 11)
 			return (day <= 30);
 		return true;
+	}
+
+	bool checkIfDigit(string test) {
+		return all_of(test.begin(), test.end(), ::isdigit);
 	}
 
 	bool writeToWatchList(string line) {
@@ -202,6 +207,21 @@ namespace JoyCompiler {
 		return false;
 	}
 
+	bool checkIfAdExist(string adName) {
+		ifstream file("TotalAds.txt");
+		string temp;
+		while (getline(file, temp)) {
+			getline(file, temp);
+			if (temp == adName) {
+				file.close();
+				return true;
+			}
+			getline(file, temp);
+		}
+		file.close();
+		return false;
+	}
+
 	bool checkIfFileEmpty(const char* fileName) {
 		fstream file(fileName, ios::in);
 		file.seekg(0, file.end);
@@ -244,6 +264,16 @@ namespace JoyCompiler {
 		tstruct = *localtime(&now);
 		strftime(buf, sizeof(buf), "%d.%m.%Y", &tstruct);
 		return buf;
+	}
+
+	bool checkIfString(string check) {
+		try {
+			stoi(check);
+		}
+		catch (invalid_argument) {
+			return false;
+		}
+		return true;
 	}
 
 	string printAllFile(string identifier) {
@@ -367,8 +397,10 @@ namespace JoyCompiler {
 			if (line != deleteLine)
 				writeToFile += line + "\n";
 		}
-		writeToFile.erase(writeToFile.length() - 1, writeToFile.length());
-		toFile << writeToFile;
+		if (writeToFile.length() > 0) {
+			writeToFile.erase(writeToFile.length() - 1, writeToFile.length());
+			toFile << writeToFile;
+		}
 		fromFile.close();
 		toFile.close();
 		remove(fileName);
@@ -428,42 +460,56 @@ namespace JoyCompiler {
 	}
 
 	void moveUser(string userLine, string identifier) {
-		ifstream fromFile;
-		fstream toTempFile, toOtherFile;
-		string line, temp;
-		int len = 0;
 		identifier = identifier + ".txt";
 		char* fileName = new char[identifier.length()];
 		strcpy(fileName, identifier.c_str());
 		fileName[identifier.length()] = '\0';
+		int lines = getNumberOfLines(fileName);
+		ifstream fromFile;
+		fstream toTempFile, toOtherFile;
+		string line, temp("");
+		int len = 0;
 		fromFile.open(identifier);
-		toTempFile.open("temp.txt", ios::out);
 		if (identifier == "ContentPromoters.txt")
 			toOtherFile.open("Users.txt", ios::app);
 		else
 			toOtherFile.open("ContentPromoters.txt", ios::app);
-		while (getline(fromFile, line)) {
-			if (line != userLine) {
-				temp.append(line);
-				temp.append("\n");
-			}
-			else {
-				toOtherFile.seekg(0, toOtherFile.end);
-				int length = toOtherFile.tellg();
-				if (length == 0) {
-					toOtherFile << userLine;
-				}
-				else
-					toOtherFile << "\n" << userLine;
-			}
+		if (lines == 1) {
+			getline(fromFile, line);
+			toOtherFile.seekg(0, toOtherFile.end);
+			int length = toOtherFile.tellg();
+			if (length > 0)
+				toOtherFile << "\n" + userLine;
+			else
+				toOtherFile << userLine;
+			fromFile.close();
+			toOtherFile.close();
+			remove(fileName);
 		}
-		temp.erase(temp.length() - 1, temp.length());
-		toTempFile << temp;
-		fromFile.close();
-		toOtherFile.close();
-		toTempFile.close();
-		remove(fileName);
-		rename("temp.txt", fileName);
+		else if (lines > 1) {
+			toTempFile.open("temp.txt", ios::out);
+			while (getline(fromFile, line)) {
+				if (line != userLine) {
+					temp.append(line);
+					temp.append("\n");
+				}
+				else {
+					toOtherFile.seekg(0, toOtherFile.end);
+					int length = toOtherFile.tellg();
+					if (length > 0)
+						toOtherFile << "\n" + userLine;
+					else
+						toOtherFile << userLine;
+				}
+			}
+			temp.erase(temp.length() - 1, temp.length());
+			toTempFile << temp;
+			toOtherFile.close();
+			toTempFile.close();
+			fromFile.close();
+			remove(fileName);
+			rename("temp.txt", fileName);
+		}
 	}
 
 	bool checkIfBelongToUser(string lineToCheck) {
@@ -503,7 +549,7 @@ namespace JoyCompiler {
 		return false;
 	}
 
-	void writeToDataBase(String^ text1, String^ text2, String^ text3, String^ text4, string identifier) {
+	bool writeToDataBase(String^ text1, String^ text2, String^ text3, String^ text4, string identifier) {
 		if (identifier == "Bugs") {
 			fstream file;
 			if (checkIfFileEmpty("Bugs.txt") == false) {
@@ -522,22 +568,30 @@ namespace JoyCompiler {
 			fstream totalAdsFile;
 			int stop = stoi(temp);
 			if (checkIfFileEmpty("TotalAds.txt") == false) {
-				totalAdsFile.open("TotalAds.txt", ios::app);
-				totalAdsFile << "\n" << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
-				totalAdsFile.close();
+				if (checkIfAdExist(marshal_as<string>(text1)) == false) {
+					totalAdsFile.open("TotalAds.txt", ios::app);	//NAME							   URL
+					totalAdsFile << "\n" << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
+					totalAdsFile.close();
+				}
+				else
+					return false;
 			}
 			else {
 				totalAdsFile.open("TotalAds.txt", ios::app);
 				totalAdsFile << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
 				totalAdsFile.close();
 			}
-			file.open("Ads.txt", ios::app);
-			int lenght = checkIfFileEmpty("Ads.txt");
-			if (lenght == 0 && stop >= 1)
+			
+			if (checkIfFileEmpty("Ads.txt") == true) {
+				file.open("Ads.txt", ios::app);
 				file << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
+				file.close();
+			}
+			file.open("Ads.txt", ios::app);
 			for (int i = 0; i < stop; i++)
 				file << "\n" << marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
 			file.close();
+			return true;
 		}
 		else if (identifier == "Content") {
 			string line = marshal_as<string>(text1) + " " + marshal_as<string>(text2) + " " + marshal_as<string>(text3) +
