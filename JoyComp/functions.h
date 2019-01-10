@@ -11,7 +11,7 @@
 #include <poclass.h>
 
 typedef enum access { ADMIN, USER, CONPROMOTER } permission;
-typedef enum string_cmp { LEFT, RIGHT };
+typedef enum string_cmp { LEFT, RIGHT, SAME};
 
 namespace JoyCompiler {
 	using namespace System;
@@ -107,10 +107,12 @@ namespace JoyCompiler {
 			else if (date1.month < date2.month)
 				return RIGHT;
 			else if (date1.month == date2.month) {
-				if (date1.day >= date2.day)
+				if (date1.day > date2.day)
 					return LEFT;
 				else if (date1.day < date2.day)
 					return RIGHT;
+				else if (date1.day == date2.day)
+					return SAME;
 			}
 		}
 		return -1;
@@ -152,7 +154,7 @@ namespace JoyCompiler {
 			if (flagOfEmptyFile == true) {
 				while (getline(fromFile, strHolder)) {
 					val = cmpDates(getDate(strHolder), date);
-					if (val == LEFT)
+					if (val == LEFT || val == SAME)
 						break;
 					else if (val == RIGHT) {
 						allText.append(strHolder + "\n");
@@ -241,7 +243,7 @@ namespace JoyCompiler {
 			Date today = convertDate(currentDateTime());
 			fstream file("Content.txt"), tempFile("temp.txt", ios::out);
 			while (getline(file, tempStr)) {
-				if (cmpDates(getDate(tempStr), today) == LEFT)
+				if (cmpDates(getDate(tempStr), today) == LEFT || cmpDates(getDate(tempStr), today) == SAME)
 					totalStr.append(tempStr + "\n");
 			}
 			if (totalStr.length() != 0) {
@@ -266,7 +268,7 @@ namespace JoyCompiler {
 		return buf;
 	}
 
-	bool checkIfString(string check) {
+	bool checkIfStringIsDigit(string check) {
 		try {
 			stoi(check);
 		}
@@ -569,7 +571,7 @@ namespace JoyCompiler {
 			int stop = stoi(temp);
 			if (checkIfFileEmpty("TotalAds.txt") == false) {
 				if (checkIfAdExist(marshal_as<string>(text1)) == false) {
-					totalAdsFile.open("TotalAds.txt", ios::app);	//NAME							   URL
+					totalAdsFile.open("TotalAds.txt", ios::app);
 					totalAdsFile << "\n" << globalUsername + "\n" + marshal_as<string>(text1) + "\n" + marshal_as<string>(text2);
 					totalAdsFile.close();
 				}
@@ -606,7 +608,7 @@ namespace JoyCompiler {
 					date = getDate(line);
 					while (getline(fromFile, strHolder)) {
 						val = cmpDates(getDate(strHolder), date);
-						if (val == LEFT)
+						if (val == LEFT || val == SAME)
 							break;
 						else if (val == RIGHT) {
 							allText.append(strHolder + "\n");

@@ -32,6 +32,8 @@ static char * test_convertDate();
 static char * test_checkIfFileEmpty();
 static char * test_currentDateTime();
 static char * test_findAllContent();
+static char * test_checkIfStringIsDigit();
+static char * test_checkIfDigit();
 
 int main() {
 	char *result = all_tests();
@@ -56,6 +58,8 @@ static char * all_tests() {
 	mu_run_test(test_checkIfFileEmpty);
 	mu_run_test(test_currentDateTime);
 	mu_run_test(test_findAllContent);
+	mu_run_test(test_checkIfStringIsDigit);
+	mu_run_test(test_checkIfDigit);
 	return 0;
 }
 
@@ -67,7 +71,7 @@ static char * test_cmpDates() {
 	date2.day = 1;
 	date2.month = 1;
 	date2.year = 2000;
-	mu_assert("cmpDates func - unit test - BAD.", cmpDates(date1, date2) == 0 || cmpDates(date1, date2) == 1);
+	mu_assert("cmpDates func - unit test - BAD.", cmpDates(date1, date2) == LEFT || cmpDates(date1, date2) == RIGHT || cmpDates(date1, date2) == SAME);
 	return 0;
 }
 
@@ -78,11 +82,11 @@ static char * test_isGoodDate() {
 
 static char * test_getDate() {
 	Date date;
-	date.day = 4;
+	date.day = 24;
 	date.month = 11;
 	date.year = 1994;
 	string a = "test test test 24.11.1994";
-	mu_assert("getDate func - unit test - BAD.", cmpDates(getDate(a), date) == 0);
+	mu_assert("getDate func - unit test - BAD.", cmpDates(getDate(a), date) == SAME);
 	return 0;
 }
 
@@ -92,7 +96,7 @@ static char * test_convertDate() {
 	date.month = 11;
 	date.year = 1994;
 	string a = "24.11.1994";
-	mu_assert("convertDate func - unit test - BAD.", cmpDates(convertDate(a), date) == 0);
+	mu_assert("convertDate func - unit test - BAD.", cmpDates(convertDate(a), date) == SAME);
 	return 0;
 }
 
@@ -102,11 +106,21 @@ static char * test_checkIfFileEmpty() {
 }
 
 static char * test_currentDateTime() {
-	mu_assert("currentDateTime func - unit test - BAD.", checkIfString(currentDateTime()) == true);
+	mu_assert("currentDateTime func - unit test - BAD.", checkIfStringIsDigit(currentDateTime()) == true);
 	return 0;
 }
 
 static char * test_findAllContent() {
-	mu_assert("findAllContent func - unit test - BAD.", checkIfString(findAllContent()) == false);
+	mu_assert("findAllContent func - unit test - BAD.", checkIfStringIsDigit(findAllContent()) == false);
+	return 0;
+}
+
+static char * test_checkIfStringIsDigit() {
+	mu_assert("checkIfStringIsDigit func - unit test - BAD.", checkIfStringIsDigit("123") == true);
+	return 0;
+}
+
+static char * test_checkIfDigit() {
+	mu_assert("checkIfDigit func - unit test - BAD.", checkIfDigit("123") == true);
 	return 0;
 }
