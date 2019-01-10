@@ -46,7 +46,6 @@ xcuserdata
 *.pdb
 *.ilk
 *.aps
-*.sln
 ipch/
 
 # Eclipse
