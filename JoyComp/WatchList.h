@@ -255,7 +255,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->nameLabel);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->backButton);
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"WatchList";
 			this->Text = L"WatchList";

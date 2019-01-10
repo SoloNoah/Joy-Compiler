@@ -316,7 +316,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->bugPanel);
 			this->Controls->Add(this->techPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->MaximizeBox = false;
 			this->Name = L"TechSupport";
 			this->Text = L"TechSupport";

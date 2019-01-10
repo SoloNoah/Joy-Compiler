@@ -371,7 +371,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->registerPanel);
 			this->Controls->Add(this->loginPanel);
 			this->ForeColor = System::Drawing::Color::Black;
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->HelpButton = true;
 			this->Name = L"Login";

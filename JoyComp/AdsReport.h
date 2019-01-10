@@ -115,7 +115,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->outputTextBox);
 			this->Controls->Add(this->faqLabel);
 			this->Controls->Add(this->faq_backButton);
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->Name = L"AdsReport";
 			this->Text = L"AdsReport";
 			this->Load += gcnew System::EventHandler(this, &AdsReport::AdsReport_Load);

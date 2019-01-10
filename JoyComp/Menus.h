@@ -371,12 +371,11 @@ namespace JoyCompiler {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(336, 387);
+			this->Controls->Add(this->userPanel);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->backButton);
 			this->Controls->Add(this->adminPanel);
-			this->Controls->Add(this->userPanel);
 			this->Controls->Add(this->conPromPanel);
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"Menus";
 			this->Text = L"Menu";

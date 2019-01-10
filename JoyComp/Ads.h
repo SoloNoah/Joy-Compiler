@@ -180,7 +180,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->nameInput);
 			this->Controls->Add(this->backButton);
 			this->Controls->Add(this->addButton);
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"Ads";
 			this->Text = L"Ads";

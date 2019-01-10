@@ -162,7 +162,6 @@ namespace JoyCompiler {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->backButton;
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->ClientSize = System::Drawing::Size(386, 355);
 			this->Controls->Add(this->faqLabel);
 			this->Controls->Add(this->proccedButton);

@@ -236,7 +236,6 @@ namespace JoyCompiler {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(559, 344);
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dateListBox);
 			this->Controls->Add(this->catListBox);

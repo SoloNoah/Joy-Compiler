@@ -880,7 +880,6 @@ namespace JoyCompiler {
 			this->Controls->Add(this->contentPanel);
 			this->Controls->Add(this->searchPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
-			this->BackgroundImage = Image::FromFile("C:\\Users\\aviel\\Desktop\\Joy_Compiler.git\\JoyComp\\photo.jpg");
 			this->MaximizeBox = false;
 			this->Name = L"Content";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;

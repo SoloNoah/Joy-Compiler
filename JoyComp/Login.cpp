@@ -78,7 +78,7 @@ static char * test_isGoodDate() {
 
 static char * test_getDate() {
 	Date date;
-	date.day = 24;
+	date.day = 4;
 	date.month = 11;
 	date.year = 1994;
 	string a = "test test test 24.11.1994";
