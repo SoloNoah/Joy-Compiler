@@ -61,9 +61,6 @@ namespace JoyCompiler {
 	private: System::Windows::Forms::Label^  reg_passLabel;
 	private: System::Windows::Forms::Label^  reg_nameLabel;
 	private: System::Windows::Forms::Label^  label2;
-
-
-
 	private: System::ComponentModel::IContainer^  components;
 
 			 /// <summary>
@@ -368,8 +365,8 @@ namespace JoyCompiler {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(460, 321);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->registerPanel);
 			this->Controls->Add(this->loginPanel);
+			this->Controls->Add(this->registerPanel);
 			this->ForeColor = System::Drawing::Color::Black;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->HelpButton = true;

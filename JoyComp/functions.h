@@ -669,126 +669,130 @@ namespace JoyCompiler {
 		string readUserAndPassword, temp;
 		ifstream admin, userf, coprom;
 		int i = 0, counter = 0;
-		admin.open("Admins.txt", ios::in);
-		while (getline(admin, readUserAndPassword)) {
-			while (counter < 1) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					temp = temp.substr(0, temp.size() - 1);
-					if (temp == username)
-						return ADMIN;
+		if (checkIfFileEmpty("Admins.txt") == false) {
+			admin.open("Admins.txt");
+			while (getline(admin, readUserAndPassword)) {
+				while (counter < 1) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						temp = temp.substr(0, temp.size() - 1);
+						if (temp == username)
+							return ADMIN;
+					}
+					i++;
 				}
-				i++;
+				i = counter = 0;
+				temp.clear();
 			}
-			i = counter = 0;
-			temp.clear();
+			admin.close();
 		}
-		admin.close();
-		userf.open("Users.txt", ios::in);
-		readUserAndPassword.clear();
-		i = counter = 0;
-		temp.clear();
-		while (getline(userf, readUserAndPassword)) {
-			while (counter < 1) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					temp = temp.substr(0, temp.size() - 1);
-					if (temp == username)
-						return USER;
+		if (checkIfFileEmpty("Users.txt") == false) {
+			userf.open("Users.txt");
+			while (getline(userf, readUserAndPassword)) {
+				while (counter < 1) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						temp = temp.substr(0, temp.size() - 1);
+						if (temp == username)
+							return USER;
+					}
+					i++;
 				}
-				i++;
+				i = counter = 0;
+				temp.clear();
 			}
-			i = counter = 0;
-			temp.clear();
+			userf.close();
 		}
-		userf.close();
-		coprom.open("ContentPromoters.txt", ios::in);
-		i = counter = 0;
-		readUserAndPassword.clear();
-		temp.clear();
-		while (getline(coprom, readUserAndPassword)) {
-			while (counter < 1) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					temp = temp.substr(0, temp.size() - 1);
-					if (temp == username)
-						return CONPROMOTER;
+		if (checkIfFileEmpty("ContentPromoters.txt") == false) {
+			coprom.open("ContentPromoters.txt");
+			while (getline(coprom, readUserAndPassword)) {
+				while (counter < 1) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						temp = temp.substr(0, temp.size() - 1);
+						if (temp == username)
+							return CONPROMOTER;
+					}
+					i++;
 				}
-				i++;
+				i = counter = 0;
+				temp.clear();
 			}
-			i = counter = 0;
-			temp.clear();
+			coprom.close();
 		}
-		coprom.close();
 		return -1;
 	}
 
 	int loginCheck(string username, string password) {
 		string readUserAndPassword, temp;
 		ifstream admin, userf, coprom;
-		admin.open("Admins.txt", ios::in);
 		int i = 0, j = 0, counter = 0;
-		while (admin.good()) {
-			getline(admin, readUserAndPassword);
-			while (counter < 2) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					if (counter == 2)
-						temp = temp.substr(0, temp.size() - 1);
-					if (temp == username + " " + password)
-						return ADMIN;
+		if (checkIfFileEmpty("Admins.txt") == false) {
+			admin.open("Admins.txt");
+			while (getline(admin, readUserAndPassword)) {
+				while (counter < 2) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						if (counter == 2)
+							temp = temp.substr(0, temp.size() - 1);
+						if (temp == username + " " + password)
+							return ADMIN;
+					}
+					i++;
 				}
-				i++;
+				i = counter = 0;
+				temp.clear();
+				readUserAndPassword.clear();
 			}
-			i = counter = 0;
-			temp.clear();
-			readUserAndPassword.clear();
+			admin.close();
 		}
-		admin.close();
-		userf.open("Users.txt", ios::in);
-		i = counter = 0;
-		temp.clear();
-		while (userf.good()) {
-			getline(userf, readUserAndPassword);
-			while (counter < 2) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					if (counter == 2)
-						temp = temp.substr(0, temp.size() - 1);
-					if (temp == username + " " + password)
-						return USER;
-				}
-				i++;
-			}
+		if (checkIfFileEmpty("Users.txt") == false) {
+			userf.open("Users.txt");
 			i = counter = 0;
 			temp.clear();
-			readUserAndPassword.clear();
+			while (getline(userf, readUserAndPassword)) {
+				while (counter < 2) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						if (counter == 2)
+							temp = temp.substr(0, temp.size() - 1);
+						if (temp == username + " " + password)
+							return USER;
+					}
+					i++;
+				}
+				i = counter = 0;
+				temp.clear();
+				readUserAndPassword.clear();
+			}
+			userf.close();
 		}
-		userf.close();
-		coprom.open("ContentPromoters.txt", ios::in);
-		i = counter = 0;
-		temp.clear();
-		while (coprom.good()) {
-			getline(coprom, readUserAndPassword);
-			while (counter < 2) {
-				temp += readUserAndPassword[i];
-				if (readUserAndPassword[i] == ' ') {
-					counter++;
-					if (counter == 2)
-						temp = temp.substr(0, temp.size() - 1);
-					if (temp == username + " " + password)
-						return CONPROMOTER;
-				}
-				i++;
-			}
+		if (checkIfFileEmpty("ContentPromoters.txt") == false) {
+			coprom.open("ContentPromoters.txt");
 			i = counter = 0;
 			temp.clear();
-			readUserAndPassword.clear();
+			while (getline(coprom, readUserAndPassword)) {
+				while (counter < 2) {
+					temp += readUserAndPassword[i];
+					if (readUserAndPassword[i] == ' ') {
+						counter++;
+						if (counter == 2)
+							temp = temp.substr(0, temp.size() - 1);
+						if (temp == username + " " + password)
+							return CONPROMOTER;
+					}
+					i++;
+				}
+				i = counter = 0;
+				temp.clear();
+				readUserAndPassword.clear();
+			}
+			coprom.close();
 		}
 		return -1;
 	}
