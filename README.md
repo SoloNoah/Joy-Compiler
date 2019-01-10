@@ -1,4 +1,4 @@
-# Joy_Compiler
+# Joy Compiler
 Authors: 
 
          Aviel Cohen
@@ -7,4 +7,4 @@ Authors:
          
          Elior Mor
          
-SCE - Software engineer department, second year.
+Software engineer department, second year, SCE.
