@@ -1,4 +1,6 @@
-// Joy_Compiler
-// Authors: Aviel Cohen
-//          Noah Solomon
-// SCE - Software engineer department, second year.
+# Joy_Compiler
+Authors: 
+         Aviel Cohen
+         Noah Solomon
+         Elior Mor
+SCE - Software engineer department, second year.
