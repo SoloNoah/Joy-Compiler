@@ -75,6 +75,11 @@ namespace JoyCompiler {
 
 	private: System::Windows::Forms::Button^  faq_backButton;
 	private: System::Windows::Forms::ListBox^  outputTextBox;
+	private: System::Windows::Forms::Panel^  conPanel;
+
+	private: System::Windows::Forms::ListBox^  listBox1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  button1;
 
 	private:
 		/// <summary>
@@ -105,9 +110,14 @@ namespace JoyCompiler {
 			this->outputTextBox = (gcnew System::Windows::Forms::ListBox());
 			this->faqLabel = (gcnew System::Windows::Forms::Label());
 			this->faq_backButton = (gcnew System::Windows::Forms::Button());
+			this->conPanel = (gcnew System::Windows::Forms::Panel());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->techPanel->SuspendLayout();
 			this->bugPanel->SuspendLayout();
 			this->faqPanel->SuspendLayout();
+			this->conPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// contactButton
@@ -306,15 +316,67 @@ namespace JoyCompiler {
 			this->faq_backButton->UseVisualStyleBackColor = false;
 			this->faq_backButton->Click += gcnew System::EventHandler(this, &TechSupport::faq_backButton_Click);
 			// 
+			// conPanel
+			// 
+			this->conPanel->Controls->Add(this->listBox1);
+			this->conPanel->Controls->Add(this->label2);
+			this->conPanel->Controls->Add(this->button1);
+			this->conPanel->Location = System::Drawing::Point(2, 3);
+			this->conPanel->Name = L"conPanel";
+			this->conPanel->Size = System::Drawing::Size(320, 324);
+			this->conPanel->TabIndex = 17;
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->HorizontalScrollbar = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
+				L"Email: JoyCompiler@ac.sce.ac.il", L"Phone Number: 08-6475860",
+					L"Address: Bialik Street 56, Library (Open 24/7)"
+			});
+			this->listBox1->Location = System::Drawing::Point(12, 92);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->SelectionMode = System::Windows::Forms::SelectionMode::None;
+			this->listBox1->Size = System::Drawing::Size(303, 68);
+			this->listBox1->TabIndex = 38;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(3, 5);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(306, 69);
+			this->label2->TabIndex = 37;
+			this->label2->Text = L"Contact Us";
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Location = System::Drawing::Point(9, 183);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(104, 36);
+			this->button1->TabIndex = 36;
+			this->button1->Text = L"Back";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
 			// TechSupport
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->tech_backButton;
-			this->ClientSize = System::Drawing::Size(328, 335);
+			this->ClientSize = System::Drawing::Size(324, 328);
+			this->Controls->Add(this->conPanel);
+			this->Controls->Add(this->techPanel);
 			this->Controls->Add(this->faqPanel);
 			this->Controls->Add(this->bugPanel);
-			this->Controls->Add(this->techPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MaximizeBox = false;
 			this->Name = L"TechSupport";
@@ -326,6 +388,8 @@ namespace JoyCompiler {
 			this->bugPanel->PerformLayout();
 			this->faqPanel->ResumeLayout(false);
 			this->faqPanel->PerformLayout();
+			this->conPanel->ResumeLayout(false);
+			this->conPanel->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -354,6 +418,8 @@ namespace JoyCompiler {
 		bugPanel->Visible = true;
 	}
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+		techPanel->Visible = false;
+		conPanel->Visible = true;
 	}
 	private: System::Void bug_sendButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		writeToDataBase(bugInput->Text, "NULL", "NULL", "NULL", "Bugs");
